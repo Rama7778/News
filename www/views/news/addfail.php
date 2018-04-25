@@ -4,7 +4,7 @@
     <title>Заголовок</title>
 </head>
 <body>
-<form action="../distrue.php" method="post">
+<form action="/Admin/input" method="post">
     <h2>Название новости</h2>
     <input title="Введите название" type="text" name="title">
     <h2>Текст новости</h2>

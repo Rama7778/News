@@ -1,8 +1,14 @@
+<?php
+require_once __DIR__ . '/../../autoload.php';
+?>
+
+
 
     <html>
 <head>
 </head>
 <body>
+
 <table align="center" width="80%" >
     <tr>
         <td align="right">
@@ -11,12 +17,12 @@
             if (($_COOKIE['login']=='root') && ($_COOKIE ['password']=='1')) {
                 echo 'Hello ' . $_COOKIE ['login']; ?>
 
-            <form method="post" action="../../models/Redirection.php">
+            <form method="post" action="/Admin/cookeSession">
                 <input type="submit" value="Выход" name="end">
             </form>
             <?php } else { ?>
                 <h1>Вход</h1>
-                <form method="post" action="../../models/Redirection.php">
+                <form method="post" action="/Admin/cookeSession">
                     <table border="2">
                         <tr>
                             <td>
@@ -41,9 +47,13 @@
                         </tr>
                     </table>
                 </form>
+
             <?php }
             ?>
-
+            <form method="post" action="/News/search">
+                <input tape="text" name="title">
+                <input type="submit" value="Поиск">
+            </form>
 
 
         </td>
@@ -65,8 +75,13 @@
     <tr>
         <td>
             <h3>
-                <a href="/Admin/Put">
+                <a href="/Admin/setNew">
                     Добавить новость
+                </a>
+            </h3>
+            <h3>
+                <a href="/Admin/adminPanel">
+                    Админпанель
                 </a>
             </h3>
         </td>

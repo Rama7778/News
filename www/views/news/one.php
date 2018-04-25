@@ -4,12 +4,12 @@
             <?php
             if (($_COOKIE['login']=='root') && ($_COOKIE ['password']=='1')) {
                 echo 'Hello ' . $_COOKIE ['login'] . PHP_EOL; ?>
-                <form method="post" action="../../models/Redirection.php">
+                <form method="post" action="/Admin/cookeSession">
                     <input type="submit" value="Выход" name="end">
                 </form>
             <?php } else { ?>
                 <h1>Вход</h1>
-                <form method="post" action="../../models/Redirection.php">
+                <form method="post" action="/Admin/cookeSession">
                     <table border="2">
                         <tr>
                             <td>
@@ -54,7 +54,7 @@ endforeach;
         <tr>
             <td>
                 <h3>
-                    <a href="addfail.php">
+                    <a href="/Admin/setUpdate/<?php echo $m->id ?>">
                         Редактировать
                     </a>
                 </h3>

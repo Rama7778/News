@@ -1,5 +1,5 @@
 <?php
-//namespace View;
+namespace Application\Models;
 require_once __DIR__ . "/../autoload.php";
 
 class View
@@ -7,6 +7,7 @@ class View
 implements \Iterator
 {
     static protected $news = [];
+    static public $post;
 
     public function __set ($key, $text=false){
         self::$news[$key] = $text;
@@ -41,6 +42,6 @@ implements \Iterator
 
     public static function data($text)
     {
-        return self::$news = $text ;
+        return self::$news = $text;
     }
 }
