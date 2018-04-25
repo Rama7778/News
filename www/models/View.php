@@ -1,5 +1,5 @@
 <?php
-namespace Application\Models;
+namespace Yaurau\Models;
 require_once __DIR__ . "/../autoload.php";
 
 class View
@@ -37,7 +37,7 @@ implements \Iterator
     }
     public static function display ($news_1) {
 
-        include __DIR__ . '/../views/news/'. $news_1 ;
+        include __DIR__ . '/../public/news/' . $news_1 ;
     }
 
     public static function data($text)

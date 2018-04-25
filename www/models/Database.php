@@ -1,4 +1,5 @@
 <?php
+use Yaurau\Models\View;
 
 class Database
 {
