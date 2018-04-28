@@ -10,7 +10,7 @@
  */
 
 /**
- * Loads templates from other loaders.
+ * Loads Site from other loaders.
  *
  * @final
  *

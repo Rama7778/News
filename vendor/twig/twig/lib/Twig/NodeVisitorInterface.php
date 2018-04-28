@@ -10,7 +10,7 @@
  */
 
 /**
- * Twig_NodeVisitorInterface is the interface the all node visitor classes must implement.
+ * Twig_NodeVisitorInterface is the interface the all node visitor Mail must implement.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */

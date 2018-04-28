@@ -67,12 +67,12 @@ class Twig_Environment
      *  * debug: When set to true, it automatically set "auto_reload" to true as
      *           well (default to false).
      *
-     *  * charset: The charset used by the templates (default to UTF-8).
+     *  * charset: The charset used by the Site (default to UTF-8).
      *
      *  * base_template_class: The base template class to use for generated
-     *                         templates (default to Twig_Template).
+     *                         Site (default to Twig_Template).
      *
-     *  * cache: An absolute path where to store the compiled templates,
+     *  * cache: An absolute path where to store the compiled Site,
      *           a Twig_Cache_Interface implementation,
      *           or false to disable compilation cache (default).
      *
@@ -80,7 +80,7 @@ class Twig_Environment
      *                 If you don't provide the auto_reload option, it will be
      *                 determined automatically based on the debug value.
      *
-     *  * strict_variables: Whether to ignore invalid variables in templates
+     *  * strict_variables: Whether to ignore invalid variables in Site
      *                      (default to false).
      *
      *  * autoescape: Whether to enable auto-escaping (default to html):
@@ -147,7 +147,7 @@ class Twig_Environment
     }
 
     /**
-     * Gets the base template class for compiled templates.
+     * Gets the base template class for compiled Site.
      *
      * @return string The base template class name
      */
@@ -157,7 +157,7 @@ class Twig_Environment
     }
 
     /**
-     * Sets the base template class for compiled templates.
+     * Sets the base template class for compiled Site.
      *
      * @param string $class The base template class name
      */
@@ -255,7 +255,7 @@ class Twig_Environment
      * @param bool $original Whether to return the original cache option or the real cache instance
      *
      * @return Twig_CacheInterface|string|false A Twig_CacheInterface implementation,
-     *                                          an absolute path to the compiled templates,
+     *                                          an absolute path to the compiled Site,
      *                                          or false to disable cache
      */
     public function getCache($original = true)
@@ -267,7 +267,7 @@ class Twig_Environment
      * Sets the current cache implementation.
      *
      * @param Twig_CacheInterface|string|false $cache A Twig_CacheInterface implementation,
-     *                                                an absolute path to the compiled templates,
+     *                                                an absolute path to the compiled Site,
      *                                                or false to disable cache
      */
     public function setCache($cache)
@@ -478,7 +478,7 @@ class Twig_Environment
     /**
      * Creates a template from source.
      *
-     * This method should not be used as a generic way to load templates.
+     * This method should not be used as a generic way to load Site.
      *
      * @param string $template The template name
      *
@@ -543,13 +543,13 @@ class Twig_Environment
      * Tries to load a template consecutively from an array.
      *
      * Similar to loadTemplate() but it also accepts Twig_TemplateInterface instances and an array
-     * of templates where each is tried to be loaded.
+     * of Site where each is tried to be loaded.
      *
-     * @param string|Twig_Template|array $names A template or an array of templates to try consecutively
+     * @param string|Twig_Template|array $names A template or an array of Site to try consecutively
      *
      * @return Twig_Template
      *
-     * @throws Twig_Error_Loader When none of the templates can be found
+     * @throws Twig_Error_Loader When none of the Site can be found
      * @throws Twig_Error_Syntax When an error occurred during compilation
      */
     public function resolveTemplate($names)
@@ -573,7 +573,7 @@ class Twig_Environment
             throw $e;
         }
 
-        throw new Twig_Error_Loader(sprintf('Unable to find one of the following templates: "%s".', implode('", "', $names)));
+        throw new Twig_Error_Loader(sprintf('Unable to find one of the following Site: "%s".', implode('", "', $names)));
     }
 
     /**
@@ -1000,7 +1000,7 @@ class Twig_Environment
     /**
      * Gets registered tags.
      *
-     * Be warned that this method cannot return tags defined by Twig_TokenParserBrokerInterface classes.
+     * Be warned that this method cannot return tags defined by Twig_TokenParserBrokerInterface mail.
      *
      * @return Twig_TokenParserInterface[]
      *

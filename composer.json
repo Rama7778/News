@@ -2,8 +2,7 @@
   "require": {
     "phpmailer/phpmailer": "5.*",
     "twig/twig": "1.*",
-    "phpunit/php-timer": "1.0.*",
-    "swiftmailer/swiftmailer": "^6.0"
-    
+    "phpunit/php-timer": "1.0.*"
+
   }
 }

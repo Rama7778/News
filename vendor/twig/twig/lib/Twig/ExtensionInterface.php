@@ -10,7 +10,7 @@
  */
 
 /**
- * Interface implemented by extension classes.
+ * Interface implemented by extension Mail.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */

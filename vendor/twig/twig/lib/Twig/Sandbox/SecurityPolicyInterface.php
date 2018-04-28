@@ -10,7 +10,7 @@
  */
 
 /**
- * Interfaces that all security policy classes must implements.
+ * Interfaces that all security policy Mail must implements.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */

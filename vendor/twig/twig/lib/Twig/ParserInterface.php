@@ -10,7 +10,7 @@
  */
 
 /**
- * Interface implemented by parser classes.
+ * Interface implemented by parser Mail.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *

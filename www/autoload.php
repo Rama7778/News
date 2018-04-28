@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 spl_autoload_register(function ($class) {
-    if (file_exists( __DIR__ . '/Controllers/' . $class . '.php')) {
-        require __DIR__ . '/Controllers/' . $class. '.php';
+    if (file_exists( __DIR__ . '/controller/' . $class . '.php')) {
+        require __DIR__ . '/controller/' . $class. '.php';
     }
     elseif (file_exists( __DIR__ .'/models/' . $class . '.php')) {
         require __DIR__ . '/models/' . $class. '.php';

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ .'/../vendor/autoload.php';
-$loader = new Twig_Loader_Filesystem(__DIR__ .'/public/templates');
+$loader = new Twig_Loader_Filesystem(__DIR__ . '/public/Site');
 $twig = new Twig_Environment($loader, array(
     'cache' => __DIR__ . '/cache/compilation_cache',
 ));
@@ -15,7 +15,7 @@ echo $twig->render('layout.html.twig', array(
 //PHP_Timer::start();
 $class = isset ($_GET ['class']) ? $_GET ['class'] : 'News'; //Определяем имя класса
 $method = isset ($_GET ['method']) ? $_GET ['method'] : 'All'; //Определяем имя класса
-$class2 = 'Application\\Controllers\\' . $class;
+$class2 = 'Application\\controller\\' . $class;
 $method2 = $method . 'News';
 
 try {

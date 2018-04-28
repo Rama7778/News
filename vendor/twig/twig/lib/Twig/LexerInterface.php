@@ -10,7 +10,7 @@
  */
 
 /**
- * Interface implemented by lexer classes.
+ * Interface implemented by lexer Mail.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *

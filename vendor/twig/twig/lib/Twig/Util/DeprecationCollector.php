@@ -25,10 +25,10 @@ class Twig_Util_DeprecationCollector
     }
 
     /**
-     * Returns deprecations for templates contained in a directory.
+     * Returns deprecations for Site contained in a directory.
      *
-     * @param string $dir A directory where templates are stored
-     * @param string $ext Limit the loaded templates by extension
+     * @param string $dir A directory where Site are stored
+     * @param string $ext Limit the loaded Site by extension
      *
      * @return array An array of deprecations
      */
@@ -44,9 +44,9 @@ class Twig_Util_DeprecationCollector
     }
 
     /**
-     * Returns deprecations for passed templates.
+     * Returns deprecations for passed Site.
      *
-     * @param Traversable $iterator An iterator of templates (where keys are template names and values the contents of the template)
+     * @param Traversable $iterator An iterator of Site (where keys are template names and values the contents of the template)
      *
      * @return array An array of deprecations
      */
@@ -60,7 +60,7 @@ class Twig_Util_DeprecationCollector
             try {
                 $this->twig->parse($this->twig->tokenize(new Twig_Source($contents, $name)));
             } catch (Twig_Error_Syntax $e) {
-                // ignore templates containing syntax errors
+                // ignore Site containing syntax errors
             }
         }
 
