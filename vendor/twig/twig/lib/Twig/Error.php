@@ -15,7 +15,7 @@
  * This exception class and its children must only be used when
  * an error occurs during the loading of a template, when a syntax error
  * is detected in a template, or when rendering a template. Other
- * errors must use regular PHP exception mail (like when the template
+ * errors must use regular PHP exception classes (like when the template
  * cache directory is not writable for instance).
  *
  * To help debugging template issues, this class tracks the original template
@@ -332,11 +332,6 @@ class Twig_Error extends Exception
         $r = new ReflectionObject($template);
         $file = $r->getFileName();
 
-        // hhvm has a bug where eval'ed files comes out as the current directory
-        if (is_dir($file)) {
-            $file = '';
-        }
-
         $exceptions = array($e = $this);
         while (($e instanceof self || method_exists($e, 'getPrevious')) && $e = $e->getPrevious()) {
             $exceptions[] = $e;
@@ -363,3 +358,6 @@ class Twig_Error extends Exception
         }
     }
 }
+
+class_alias('Twig_Error', 'Twig\Error\Error', false);
+class_exists('Twig_Source');

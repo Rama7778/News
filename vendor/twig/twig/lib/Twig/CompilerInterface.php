@@ -10,7 +10,7 @@
  */
 
 /**
- * Interface implemented by compiler Mail.
+ * Interface implemented by compiler classes.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *

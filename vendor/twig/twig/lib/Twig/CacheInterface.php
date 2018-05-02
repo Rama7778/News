@@ -10,11 +10,11 @@
  */
 
 /**
- * Interface implemented by cache mail.
+ * Interface implemented by cache classes.
  *
- * It is highly recommended to always store Site on the filesystem to
+ * It is highly recommended to always store templates on the filesystem to
  * benefit from the PHP opcode cache. This interface is mostly useful if you
- * need to implement a custom strategy for storing Site on the filesystem.
+ * need to implement a custom strategy for storing templates on the filesystem.
  *
  * @author Andrew Tch <andrew@noop.lv>
  */
@@ -54,3 +54,5 @@ interface Twig_CacheInterface
      */
     public function getTimestamp($key);
 }
+
+class_alias('Twig_CacheInterface', 'Twig\Cache\CacheInterface', false);

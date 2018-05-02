@@ -16,11 +16,11 @@
  */
 class Twig_Environment
 {
-    const VERSION = '1.33.2';
-    const VERSION_ID = 13302;
+    const VERSION = '1.35.3';
+    const VERSION_ID = 13503;
     const MAJOR_VERSION = 1;
-    const MINOR_VERSION = 33;
-    const RELEASE_VERSION = 1;
+    const MINOR_VERSION = 35;
+    const RELEASE_VERSION = 3;
     const EXTRA_VERSION = '';
 
     protected $charset;
@@ -58,6 +58,7 @@ class Twig_Environment
     private $runtimeLoaders = array();
     private $runtimes = array();
     private $optionsHash;
+    private $loading = array();
 
     /**
      * Constructor.
@@ -67,12 +68,12 @@ class Twig_Environment
      *  * debug: When set to true, it automatically set "auto_reload" to true as
      *           well (default to false).
      *
-     *  * charset: The charset used by the Site (default to UTF-8).
+     *  * charset: The charset used by the templates (default to UTF-8).
      *
      *  * base_template_class: The base template class to use for generated
-     *                         Site (default to Twig_Template).
+     *                         templates (default to Twig_Template).
      *
-     *  * cache: An absolute path where to store the compiled Site,
+     *  * cache: An absolute path where to store the compiled templates,
      *           a Twig_Cache_Interface implementation,
      *           or false to disable compilation cache (default).
      *
@@ -80,7 +81,7 @@ class Twig_Environment
      *                 If you don't provide the auto_reload option, it will be
      *                 determined automatically based on the debug value.
      *
-     *  * strict_variables: Whether to ignore invalid variables in Site
+     *  * strict_variables: Whether to ignore invalid variables in templates
      *                      (default to false).
      *
      *  * autoescape: Whether to enable auto-escaping (default to html):
@@ -131,14 +132,14 @@ class Twig_Environment
         // For BC
         if (is_string($this->originalCache)) {
             $r = new ReflectionMethod($this, 'writeCacheFile');
-            if ($r->getDeclaringClass()->getName() !== __CLASS__) {
+            if (__CLASS__ !== $r->getDeclaringClass()->getName()) {
                 @trigger_error('The Twig_Environment::writeCacheFile method is deprecated since version 1.22 and will be removed in Twig 2.0.', E_USER_DEPRECATED);
 
                 $this->bcWriteCacheFile = true;
             }
 
             $r = new ReflectionMethod($this, 'getCacheFilename');
-            if ($r->getDeclaringClass()->getName() !== __CLASS__) {
+            if (__CLASS__ !== $r->getDeclaringClass()->getName()) {
                 @trigger_error('The Twig_Environment::getCacheFilename method is deprecated since version 1.22 and will be removed in Twig 2.0.', E_USER_DEPRECATED);
 
                 $this->bcGetCacheFilename = true;
@@ -147,7 +148,7 @@ class Twig_Environment
     }
 
     /**
-     * Gets the base template class for compiled Site.
+     * Gets the base template class for compiled templates.
      *
      * @return string The base template class name
      */
@@ -157,7 +158,7 @@ class Twig_Environment
     }
 
     /**
-     * Sets the base template class for compiled Site.
+     * Sets the base template class for compiled templates.
      *
      * @param string $class The base template class name
      */
@@ -255,7 +256,7 @@ class Twig_Environment
      * @param bool $original Whether to return the original cache option or the real cache instance
      *
      * @return Twig_CacheInterface|string|false A Twig_CacheInterface implementation,
-     *                                          an absolute path to the compiled Site,
+     *                                          an absolute path to the compiled templates,
      *                                          or false to disable cache
      */
     public function getCache($original = true)
@@ -267,7 +268,7 @@ class Twig_Environment
      * Sets the current cache implementation.
      *
      * @param Twig_CacheInterface|string|false $cache A Twig_CacheInterface implementation,
-     *                                                an absolute path to the compiled Site,
+     *                                                an absolute path to the compiled templates,
      *                                                or false to disable cache
      */
     public function setCache($cache)
@@ -382,6 +383,10 @@ class Twig_Environment
      *
      * @param string|Twig_TemplateWrapper|Twig_Template $name The template name
      *
+     * @throws Twig_Error_Loader  When the template cannot be found
+     * @throws Twig_Error_Runtime When a previously generated cache is corrupted
+     * @throws Twig_Error_Syntax  When an error occurred during compilation
+     *
      * @return Twig_TemplateWrapper
      */
     public function load($name)
@@ -472,13 +477,28 @@ class Twig_Environment
             $this->initRuntime();
         }
 
-        return $this->loadedTemplates[$cls] = new $cls($this);
+        if (isset($this->loading[$cls])) {
+            throw new Twig_Error_Runtime(sprintf('Circular reference detected for Twig template "%s", path: %s.', $name, implode(' -> ', array_merge($this->loading, array($name)))));
+        }
+
+        $this->loading[$cls] = $name;
+
+        try {
+            $this->loadedTemplates[$cls] = new $cls($this);
+            unset($this->loading[$cls]);
+        } catch (\Exception $e) {
+            unset($this->loading[$cls]);
+
+            throw $e;
+        }
+
+        return $this->loadedTemplates[$cls];
     }
 
     /**
      * Creates a template from source.
      *
-     * This method should not be used as a generic way to load Site.
+     * This method should not be used as a generic way to load templates.
      *
      * @param string $template The template name
      *
@@ -489,7 +509,7 @@ class Twig_Environment
      */
     public function createTemplate($template)
     {
-        $name = sprintf('__string_template__%s', hash('sha256', uniqid(mt_rand(), true), false));
+        $name = sprintf('__string_template__%s', hash('sha256', $template, false));
 
         $loader = new Twig_Loader_Chain(array(
             new Twig_Loader_Array(array($name => $template)),
@@ -542,14 +562,14 @@ class Twig_Environment
     /**
      * Tries to load a template consecutively from an array.
      *
-     * Similar to loadTemplate() but it also accepts Twig_TemplateInterface instances and an array
-     * of Site where each is tried to be loaded.
+     * Similar to loadTemplate() but it also accepts instances of Twig_Template and
+     * Twig_TemplateWrapper, and an array of templates where each is tried to be loaded.
      *
-     * @param string|Twig_Template|array $names A template or an array of Site to try consecutively
+     * @param string|Twig_Template|Twig_TemplateWrapper|array $names A template or an array of templates to try consecutively
      *
-     * @return Twig_Template
+     * @return Twig_Template|Twig_TemplateWrapper
      *
-     * @throws Twig_Error_Loader When none of the Site can be found
+     * @throws Twig_Error_Loader When none of the templates can be found
      * @throws Twig_Error_Syntax When an error occurred during compilation
      */
     public function resolveTemplate($names)
@@ -563,6 +583,10 @@ class Twig_Environment
                 return $name;
             }
 
+            if ($name instanceof Twig_TemplateWrapper) {
+                return $name;
+            }
+
             try {
                 return $this->loadTemplate($name);
             } catch (Twig_Error_Loader $e) {
@@ -573,7 +597,7 @@ class Twig_Environment
             throw $e;
         }
 
-        throw new Twig_Error_Loader(sprintf('Unable to find one of the following Site: "%s".', implode('", "', $names)));
+        throw new Twig_Error_Loader(sprintf('Unable to find one of the following templates: "%s".', implode('", "', $names)));
     }
 
     /**
@@ -758,7 +782,7 @@ class Twig_Environment
 
     public function setLoader(Twig_LoaderInterface $loader)
     {
-        if (!$loader instanceof Twig_SourceContextLoaderInterface && 0 !== strpos(get_class($loader), 'Mock_Twig_LoaderInterface')) {
+        if (!$loader instanceof Twig_SourceContextLoaderInterface && 0 !== strpos(get_class($loader), 'Mock_')) {
             @trigger_error(sprintf('Twig loader "%s" should implement Twig_SourceContextLoaderInterface since version 1.27.', get_class($loader)), E_USER_DEPRECATED);
         }
 
@@ -831,6 +855,12 @@ class Twig_Environment
     public function hasExtension($class)
     {
         $class = ltrim($class, '\\');
+        if (!isset($this->extensionsByClass[$class]) && class_exists($class, false)) {
+            // For BC/FC with namespaced aliases
+            $class = new ReflectionClass($class);
+            $class = $class->name;
+        }
+
         if (isset($this->extensions[$class])) {
             if ($class !== get_class($this->extensions[$class])) {
                 @trigger_error(sprintf('Referencing the "%s" extension by its name (defined by getName()) is deprecated since 1.26 and will be removed in Twig 2.0. Use the Fully Qualified Extension Class Name instead.', $class), E_USER_DEPRECATED);
@@ -860,6 +890,11 @@ class Twig_Environment
     public function getExtension($class)
     {
         $class = ltrim($class, '\\');
+        if (!isset($this->extensionsByClass[$class]) && class_exists($class, false)) {
+            // For BC/FC with namespaced aliases
+            $class = new ReflectionClass($class);
+            $class = $class->name;
+        }
 
         if (isset($this->extensions[$class])) {
             if ($class !== get_class($this->extensions[$class])) {
@@ -938,6 +973,12 @@ class Twig_Environment
         }
 
         $class = ltrim($name, '\\');
+        if (!isset($this->extensionsByClass[$class]) && class_exists($class, false)) {
+            // For BC/FC with namespaced aliases
+            $class = new ReflectionClass($class);
+            $class = $class->name;
+        }
+
         if (isset($this->extensions[$class])) {
             if ($class !== get_class($this->extensions[$class])) {
                 @trigger_error(sprintf('Referencing the "%s" extension by its name (defined by getName()) is deprecated since 1.26 and will be removed in Twig 2.0. Use the Fully Qualified Extension Class Name instead.', $class), E_USER_DEPRECATED);
@@ -1000,7 +1041,7 @@ class Twig_Environment
     /**
      * Gets registered tags.
      *
-     * Be warned that this method cannot return tags defined by Twig_TokenParserBrokerInterface mail.
+     * Be warned that this method cannot return tags defined by Twig_TokenParserBrokerInterface classes.
      *
      * @return Twig_TokenParserInterface[]
      *
@@ -1559,3 +1600,5 @@ class Twig_Environment
         $this->optionsHash = implode(':', $hashParts);
     }
 }
+
+class_alias('Twig_Environment', 'Twig\Environment', false);

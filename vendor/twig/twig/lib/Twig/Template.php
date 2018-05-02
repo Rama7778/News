@@ -11,7 +11,7 @@
  */
 
 /**
- * Default base class for compiled Site.
+ * Default base class for compiled templates.
  *
  * This class is an implementation detail of how template compilation currently
  * works, which might change. It should never be used directly. Use $twig->load()
@@ -285,7 +285,7 @@ abstract class Twig_Template implements Twig_TemplateInterface
      * Returns whether a block exists or not in the current context of the template.
      *
      * This method checks blocks defined in the current template
-     * or defined in "used" traits or defined in parent Site.
+     * or defined in "used" traits or defined in parent templates.
      *
      * @param string $name    The block name
      * @param array  $context The context
@@ -322,7 +322,7 @@ abstract class Twig_Template implements Twig_TemplateInterface
      * Returns all block names in the current context of the template.
      *
      * This method checks blocks defined in the current template
-     * or defined in "used" traits or defined in parent Site.
+     * or defined in "used" traits or defined in parent templates.
      *
      * @param array $context The context
      * @param array $blocks  The current set of blocks
@@ -568,6 +568,8 @@ abstract class Twig_Template implements Twig_TemplateInterface
 
             if (null === $object) {
                 $message = sprintf('Impossible to invoke a method ("%s") on a null variable.', $item);
+            } elseif (is_array($object)) {
+                $message = sprintf('Impossible to invoke a method ("%s") on an array.', $item);
             } else {
                 $message = sprintf('Impossible to invoke a method ("%s") on a %s variable ("%s").', $item, gettype($object), $object);
             }
@@ -594,13 +596,13 @@ abstract class Twig_Template implements Twig_TemplateInterface
 
         // object method
         if (!isset(self::$cache[$class])) {
-            // get_class_methods returns all methods accessible in the scope, but we only want public ones to be accessible in Site
+            // get_class_methods returns all methods accessible in the scope, but we only want public ones to be accessible in templates
             if ($object instanceof self) {
                 $ref = new ReflectionClass($class);
                 $methods = array();
 
                 foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $refMethod) {
-                    // Accessing the environment from Site is forbidden to prevent untrusted changes to the environment
+                    // Accessing the environment from templates is forbidden to prevent untrusted changes to the environment
                     if ('getenvironment' !== strtolower($refMethod->name)) {
                         $methods[] = $refMethod->name;
                     }
@@ -696,9 +698,11 @@ abstract class Twig_Template implements Twig_TemplateInterface
             }
             @trigger_error($message, E_USER_DEPRECATED);
 
-            return $ret === '' ? '' : new Twig_Markup($ret, $this->env->getCharset());
+            return '' === $ret ? '' : new Twig_Markup($ret, $this->env->getCharset());
         }
 
         return $ret;
     }
 }
+
+class_alias('Twig_Template', 'Twig\Template', false);

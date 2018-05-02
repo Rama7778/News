@@ -10,7 +10,7 @@
  */
 
 /**
- * Twig_NodeVisitorInterface is the interface the all node visitor Mail must implement.
+ * Twig_NodeVisitorInterface is the interface the all node visitor classes must implement.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -39,3 +39,7 @@ interface Twig_NodeVisitorInterface
      */
     public function getPriority();
 }
+
+class_alias('Twig_NodeVisitorInterface', 'Twig\NodeVisitor\NodeVisitorInterface', false);
+class_exists('Twig_Environment');
+class_exists('Twig_Node');

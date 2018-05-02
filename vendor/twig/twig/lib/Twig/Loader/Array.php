@@ -28,7 +28,7 @@ class Twig_Loader_Array implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
     protected $templates = array();
 
     /**
-     * @param array $templates An array of Site (keys are the names, and values are the source code)
+     * @param array $templates An array of templates (keys are the names, and values are the source code)
      */
     public function __construct(array $templates = array())
     {
@@ -93,3 +93,5 @@ class Twig_Loader_Array implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         return true;
     }
 }
+
+class_alias('Twig_Loader_Array', 'Twig\Loader\ArrayLoader', false);

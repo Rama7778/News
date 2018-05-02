@@ -10,7 +10,7 @@
  */
 
 /**
- * Interface implemented by all compiled Site.
+ * Interface implemented by all compiled templates.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *

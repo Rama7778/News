@@ -47,7 +47,7 @@ class Twig_Node_Module extends Twig_Node
             $nodes['parent'] = $parent;
         }
 
-        // embedded Site are set as attributes so that they are only visited once by the visitors
+        // embedded templates are set as attributes so that they are only visited once by the visitors
         parent::__construct($nodes, array(
             // source to be remove in 2.0
             'source' => $this->source->getCode(),
@@ -453,7 +453,9 @@ class Twig_Node_Module extends Twig_Node
                 ->raw(");\n")
             ;
         } else {
-            throw new LogicException('Trait Site can only be constant nodes.');
+            throw new LogicException('Trait templates can only be constant nodes.');
         }
     }
 }
+
+class_alias('Twig_Node_Module', 'Twig\Node\ModuleNode', false);

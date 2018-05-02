@@ -12,7 +12,7 @@
 @trigger_error('The Twig_Autoloader class is deprecated since version 1.21 and will be removed in 2.0. Use Composer instead.', E_USER_DEPRECATED);
 
 /**
- * Autoloads Twig mail.
+ * Autoloads Twig classes.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
@@ -37,7 +37,7 @@ class Twig_Autoloader
     }
 
     /**
-     * Handles autoloading of mail.
+     * Handles autoloading of classes.
      *
      * @param string $class a class name
      */

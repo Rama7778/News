@@ -26,7 +26,7 @@ class Twig_Loader_Filesystem implements Twig_LoaderInterface, Twig_ExistsLoaderI
     private $rootPath;
 
     /**
-     * @param string|array $paths    A path or an array of paths where to look for Site
+     * @param string|array $paths    A path or an array of paths where to look for templates
      * @param string|null  $rootPath The root path common to all relative paths (null for getcwd())
      */
     public function __construct($paths = array(), $rootPath = null)
@@ -42,11 +42,11 @@ class Twig_Loader_Filesystem implements Twig_LoaderInterface, Twig_ExistsLoaderI
     }
 
     /**
-     * Returns the paths to the Site.
+     * Returns the paths to the templates.
      *
      * @param string $namespace A path namespace
      *
-     * @return array The array of paths where to look for Site
+     * @return array The array of paths where to look for templates
      */
     public function getPaths($namespace = self::MAIN_NAMESPACE)
     {
@@ -66,9 +66,9 @@ class Twig_Loader_Filesystem implements Twig_LoaderInterface, Twig_ExistsLoaderI
     }
 
     /**
-     * Sets the paths where Site are stored.
+     * Sets the paths where templates are stored.
      *
-     * @param string|array $paths     A path or an array of paths where to look for Site
+     * @param string|array $paths     A path or an array of paths where to look for templates
      * @param string       $namespace A path namespace
      */
     public function setPaths($paths, $namespace = self::MAIN_NAMESPACE)
@@ -84,9 +84,9 @@ class Twig_Loader_Filesystem implements Twig_LoaderInterface, Twig_ExistsLoaderI
     }
 
     /**
-     * Adds a path where Site are stored.
+     * Adds a path where templates are stored.
      *
-     * @param string $path      A path where to look for Site
+     * @param string $path      A path where to look for templates
      * @param string $namespace A path namespace
      *
      * @throws Twig_Error_Loader
@@ -105,9 +105,9 @@ class Twig_Loader_Filesystem implements Twig_LoaderInterface, Twig_ExistsLoaderI
     }
 
     /**
-     * Prepends a path where Site are stored.
+     * Prepends a path where templates are stored.
      *
-     * @param string $path      A path where to look for Site
+     * @param string $path      A path where to look for templates
      * @param string $namespace A path namespace
      *
      * @throws Twig_Error_Loader
@@ -279,10 +279,12 @@ class Twig_Loader_Filesystem implements Twig_LoaderInterface, Twig_ExistsLoaderI
     {
         return strspn($file, '/\\', 0, 1)
             || (strlen($file) > 3 && ctype_alpha($file[0])
-                && substr($file, 1, 1) === ':'
+                && ':' === substr($file, 1, 1)
                 && strspn($file, '/\\', 2, 1)
             )
             || null !== parse_url($file, PHP_URL_SCHEME)
         ;
     }
 }
+
+class_alias('Twig_Loader_Filesystem', 'Twig\Loader\FilesystemLoader', false);

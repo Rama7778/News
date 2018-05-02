@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-class Twig_Tests_Loader_FilesystemTest extends PHPUnit_Framework_TestCase
+class Twig_Tests_Loader_FilesystemTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetSourceContext()
     {
         $path = dirname(__FILE__).'/../Fixtures';
         $loader = new Twig_Loader_Filesystem(array($path));
-        $this->assertEquals('errors/base.html.twig', $loader->getSourceContext('errors/base.html.twig')->getName());
-        $this->assertEquals(realpath($path.'/errors/base.html.twig'), realpath($loader->getSourceContext('errors/base.html.twig')->getPath()));
+        $this->assertEquals('errors/index.html', $loader->getSourceContext('errors/index.html')->getName());
+        $this->assertEquals(realpath($path.'/errors/index.html'), realpath($loader->getSourceContext('errors/index.html')->getPath()));
     }
 
     /**
@@ -88,9 +88,9 @@ class Twig_Tests_Loader_FilesystemTest extends PHPUnit_Framework_TestCase
 
         // do not use realpath here as it would make the test unuseful
         $this->assertEquals($cacheKey, str_replace('\\', '/', $loader->getCacheKey('@named/named_absolute.html')));
-        $this->assertEquals("path (final)\n", $loader->getSourceContext('base.html.twig')->getCode());
-        $this->assertEquals("path (final)\n", $loader->getSourceContext('@__main__/base.html.twig')->getCode());
-        $this->assertEquals("named path (final)\n", $loader->getSourceContext('@named/base.html.twig')->getCode());
+        $this->assertEquals("path (final)\n", $loader->getSourceContext('index.html')->getCode());
+        $this->assertEquals("path (final)\n", $loader->getSourceContext('@__main__/index.html')->getCode());
+        $this->assertEquals("named path (final)\n", $loader->getSourceContext('@named/index.html')->getCode());
     }
 
     public function getBasePaths()
@@ -161,12 +161,12 @@ class Twig_Tests_Loader_FilesystemTest extends PHPUnit_Framework_TestCase
         $loader = new Twig_Loader_Filesystem(array($basePath.'/normal'));
         $loader->addPath($basePath.'/named', 'named');
 
-        // prime the cache for base.html.twig in the named namespace
-        $namedSource = $loader->getSourceContext('@named/base.html.twig')->getCode();
+        // prime the cache for index.html in the named namespace
+        $namedSource = $loader->getSourceContext('@named/index.html')->getCode();
         $this->assertEquals("named path\n", $namedSource);
 
-        // get base.html.twig from the main namespace
-        $this->assertEquals("path\n", $loader->getSourceContext('base.html.twig')->getCode());
+        // get index.html from the main namespace
+        $this->assertEquals("path\n", $loader->getSourceContext('index.html')->getCode());
     }
 
     public function testLoadTemplateAndRenderBlockWithCache()
