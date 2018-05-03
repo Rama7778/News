@@ -4,7 +4,7 @@ spl_autoload_register(function ($class) {
     if (file_exists( __DIR__ . '/controller/' . $class . '.php')) {
         require __DIR__ . '/controller/' . $class. '.php';
     }
-    elseif (file_exists( __DIR__ .'/models/' . $class . '.php')) {
+    elseif (file_exists( __DIR__ . '/models/' . $class . '.php')) {
         require __DIR__ . '/models/' . $class. '.php';
     }
     else {

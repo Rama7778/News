@@ -1,10 +1,5 @@
 AddDefaultCharset UTF-8
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-l
-RewriteRule ^(.*)/(.*)/([0-9]+)/?$ index.php?class=$1&method=$2&id=$3 [L,QSA]
-RewriteRule ^(.*)/(.*)/?$ index.php?class=$1&method=$2 [L,QSA]
+
 
 
 

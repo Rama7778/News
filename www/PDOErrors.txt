@@ -1,0 +1,1 @@
+SQLSTATE[HY000] [1045] Access denied for user 'r oot'@'localhost' (using password: NO) Time 10:21 Date 8.May.2017///SQLSTATE[HY000] [1049] Unknown database 'news' Time 22:30 Date 25.April.2018///SQLSTATE[HY000] [1049] Unknown database 'news' Time 22:33 Date 25.April.2018///SQLSTATE[HY000] [1049] Unknown database 'news' Time 22:33 Date 25.April.2018///

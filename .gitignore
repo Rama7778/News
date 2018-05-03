@@ -1,3 +1,6 @@
 /.idea
-/www/PDOErrors.txt
+/PDOErrors.txt
 /composer.phar
+/www/PDOErrors.txt
+/www/cache/compilation_cache/
+/vendor/
