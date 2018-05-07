@@ -1,149 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} | Home</title>
+    <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../../public/css/bootstrap.css">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- //for-mobile-apps -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <!--fonts-->
+    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <!--//fonts-->
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <!--light-box-files -->
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/jquery.chocolat.js"></script>
+    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">
+    <!--//light-box-files -->
+    <script type="text/javascript">
+        $(function() {
+            $('.gallery a').Chocolat();
+        });
+    </script>
+    <!-- //js -->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: true,
+                speed: 1000,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+        });
+    </script>
+
+
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
 </head>
 <body>
+<!--Header-->
+<div class="header">
+    <!--Top-Bar-->
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">PR<i class="fa fa-circle"></i>GER</a>
+    <div class="top-bar">
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1><a class="navbar-brand" href="index.html">{% block title %}{% endblock %}</a></h1>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                        <nav class="linkEffects linkHoverEffect_12">
+                            <ul>
+                                <li><a class="active" href="index.html"><span>Home</span></a></li>
+                                <li><a class="scroll" href="#about"><span>About</span></a></li>
+                                <li><a class="scroll" href="#service"><span>Services</span></a></li>
+                                <li><a class="scroll" href="#gallery"><span>Gallery</span></a></li>
+                                <li><a class="scroll" href="#contact"><span>Contact</span></a></li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Домой</a></li>
-                <li><a href="#">Про нас</a></li>
-                <li><a href="#">Сервсиы</a></li>
-                <li><a href="#">Работы</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+    </div>
+    <!--//Top-Bar-->
+    <!--Slider-->
+    <div class="slider">
+        <div class="callbacks_container">
+            <ul class="rslides" id="slider">
+                <li>
+                    <div class="slider-img">
+                        <img src="images/banner1.jpg" class="img-responsive" alt="{{title_images_banner1}}">
+                    </div>
+                    <div class="slider-info">
+                        <span class="italic">{{text_banner_first_1}} </span>
+                        <h4> {{title_banner_first_1}}</h4>
+                        <h3>{title_banner_second_1}}</h3>
+                        <p>{{text_banner_second_1}}</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="slider-img">
+                        <img src="images/banner2.jpg" class="img-responsive" alt="{{title_images_banner2}}">
+                    </div>
+                    <div class="slider-info">
+                        <span class="italic">{{text_banner_first_2}} </span>
+                        <h4> {{title_banner_first_2}}</h4>
+                        <h3>{title_banner_second_2}}</h3>
+                        <p>{{text_banner_second_2}}</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="slider-img">
+                        <img src="images/banner3.jpg" class="img-responsive" alt="{{title_images_banner3}}">
+                    </div>
+                    <div class="slider-info">
+                        <span class="italic">{{text_banner_first_3}} </span>
+                        <h4> {{title_banner_first_3}}</h4>
+                        <h3>{title_banner_second_3}}</h3>
+                        <p>{{text_banner_second_3}}</p>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="slider-img">
+                        <img src="images/banner4.jpg" class="img-responsive" alt="{{title_images_banner4}}">
+                    </div>
+                    <div class="slider-info">
+                        <span class="italic">{{text_banner_first_4}} </span>
+                        <h4> {{title_banner_first_4}}</h4>
+                        <h3>{title_banner_second_4}}</h3>
+                        <p>{{text_banner_second_4}}</p>
+
+                    </div>
+                </li>
+
             </ul>
+
         </div>
+        <div class="clearfix"></div>
     </div>
+    <!--//Slider-->
 </div>
-<div id="headerwrap">
+<!--//Header-->
+<!--about-->
+<div class="offer-w3layouts" id="about">
     <div class="container">
-        <div class="row centered">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h1>{% block header %}{% endblock %}</h1>
-                <h2>Сайты на Bootstrap отличные</h2>
-            </div>
+        <div class="offer-header-agile">
+            <h3 class="tittle">{{what we}} <span>{{offer}}</span></h3>
+            <p>{{we offer our customers}}</p>
         </div>
-    </div>
-</div>
-<div class="container w">
-    <div class="row centered">
-        <br><br>
-        <div class="col-lg-4">
-            <i class="fa fa-heart"></i>
-            <h4>Дизайн</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        </div>
-        <div class="col-lg-4">
-            <i class="fa fa-laptop"></i>
-            <h4>Компьютеры</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        </div>
-        <div class="col-lg-4">
-            <i class="fa fa-trophy"></i>
-            <h4>Помощь</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-        </div>
-    </div>
-    <br><br>
-</div>
-<div id="dg">
-    <div class="container">
-        <div class="row centered">
-            <h4>Последние работы</h4>
-            <br>
-            <div class="col-lg-4">
-                <div class="tilt">
-                    <a href="#"><img src="img/p01.png" alt=""></a>
+        <div class="row">
+            <div class="col-md-4 offer-grid ">
+                <div class="icon">
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
                 </div>
+                <h4>{{icon_title_offer_1}}</h4>
+                <p>{{icon_text_offer_1}}</p>
             </div>
-            <div class="col-lg-4">
-                <div class="tilt">
-                    <a href="#"><img src="img/p02.png" alt=""></a>
+            <div class="col-md-4 offer-grid ">
+                <div class="icon">
+                    <i class="fa fa-map-o" aria-hidden="true"></i>
                 </div>
+                <h4>{{icon_title_offer_2}}</h4>
+                <p>{{icon_text_offer_2}}</p>
             </div>
-            <div class="col-lg-4">
-                <div class="tilt">
-                    <a href="#"><img src="img/p03.png" alt=""></a>
+            <div class="col-md-4 offer-grid ">
+                <div class="icon">
+                    <i class="fa fa-university" aria-hidden="true"></i>
                 </div>
+                <h4>{{icon_title_offer_3}}</h4>
+                <p>{{icon_text_offer_3}}</p>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
 </div>
-<div class="container wb">
-    <div class="row centered">
-        <br><br>
-        <div class="col-lg-8 col-lg-offset-2">
-            <h4>Мы создаем сайты</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            <p><br><br></p>
-        </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-10 col-lg-offset-1">
-            <img src="img/munter.png" alt="" class="img-responsive">
-        </div>
-    </div>
-</div>
-<div id="lg">
+<hr>
+<!--//about-->
+<!--service-->
+<div class="offer-w3layouts" id="service">
     <div class="container">
-        <div class="row centered">
-            <h4>Партнеры</h4>
-            <div class="col-lg-2 col-lg-offset-1">
-                <img src="img/c01.gif" alt="">
-            </div>
-            <div class="col-lg-2">
-                <img src="img/c02.gif" alt="">
-            </div>
-            <div class="col-lg-2">
-                <img src="img/c03.gif" alt="">
-            </div>
-            <div class="col-lg-2">
-                <img src="img/c04.gif" alt="">
-            </div>
-            <div class="col-lg-2">
-                <img src="img/c05.gif" alt="">
-            </div>
+        <div class="offer-header-agile">
+            <h3 class="tittle">{{Our}} <span>{{service}}</span></h3>
+            <p>{{we offer our customers}}</p>
         </div>
+        <div class="row">
+            <div class="col-md-3 offer-grid ">
+                <div class="icon">
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <h4>{{icon_title_service_1}}</h4>
+                <p>{{icon_text_service_1}}</p>
+
+            </div>
+            <div class="col-md-3 offer-grid ">
+                <div class="icon">
+                    <i class="fa fa-map-o" aria-hidden="true"></i>
+                </div>
+                <h4>{{icon_title_service_2}}</h4>
+                <p>{{icon_text_service_2}}</p>
+            </div>
+            <div class="col-md-3 offer-grid ">
+                <div class="icon">
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                </div>
+                <h4>{{icon_title_service_3}}</h4>
+                <p>{{icon_text_service_3}}</p>
+            </div>
+            <div class="col-md-3 offer-grid ">
+                <div class="icon">
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                </div>
+                <h4>{{icon_title_service_4}}</h4>
+                <p>{{icon_text_service_4}}</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+
     </div>
 </div>
-<div id="r">
+<hr>
+<!--//service-->
+<!--/gallery-->
+<div class="gallery" id="gallery">
     <div class="container">
-        <div class="row centered">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h4>Разарботка сайтов на профессиональном уровне</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+        <!--script-->
+        <script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+        <script type="text/javascript">
+            $(function() {
+
+                $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+            });
+        </script>
+        <!--script-->
+        <h3 class="tittle">{{Our}} <span>{{Projects}}</span></h3>
+        <div class="gallery-grids">
+            <section>
+                <ul id="da-thumbs" class="da-thumbs">
+                    <li>
+                        <a href="images/gallery1.jpg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery1.jpg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery2.jpg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery2.jpg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery3.jpg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery3.jpg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery4.jpeg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery4.jpeg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery5.jpg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery5.jpg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery6.jpeg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery6.jpeg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery7.jpg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery7.jpg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery3.jpg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery3.jpg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="images/gallery1.jpg" class="b-link-stripe b-animate-go  thickbox">
+                            <img src="images/gallery1.jpg" alt="" />
+                            <div>
+                                <h5><span>{{title}}</span></h5>
+                                <p>{{text_projects}}</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+<!--//gallery-->
+<!--contact-->
+<div class="contact-w3-agileits" id="contact">
+    <div class="container">
+        <h3 class="tittle"><span>contact</span></h3>
+        <form action="#" method="post">
+            <input type="text" name="Name" placeholder="Name*" required="" />
+            <input type="email" name="Email" placeholder="Email*" required="" />
+            <textarea name="Comments" placeholder="Message" required=""></textarea>
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</div>
+<!--/contact -->
+<!--footer-->
+<div class="footer">
+    <div class="footer-head-agile">
+        <ul>
+            <li class="contact-agile"><span class="fa-icon-w3"><i class="fa fa-phone" aria-hidden="true"></i></span>CALL NOW : {{telefon}}</li>
+            <li class="logo-w3ls"><h2><a  href="index.html">{{title}}</a></h2></li>
+            <li class="mail"><span class="fa-icon-w3"><i class="fa fa-envelope" aria-hidden="true"></i></span>MAIL : <a href="mailto:info@example.com">{{mail}}</a></li>
+        </ul>
+    </div>
+    <label></label>
+    <div class="container">
+
+        <div class="col-md-12 about-us-agile">
+            <div class="aboutus-right-wthree">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                </ul>
             </div>
         </div>
-    </div>
-</div>
-<div id="f">
-    <div class="container">
-        <div class="row centered">
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-vk"></i></a>
+
+        <div class="clearfix"> </div>
+        <div class="copy">
+            <p>© {{year}} <a href="https://github.com/yaurau/yaurau-framework">Yaurau framework</a> . All Rights Reserved</p>
         </div>
+
     </div>
 </div>
-
-
-
-
-    {% block navigation %}{% endblock %}
-    {% block body %}{% endblock %}
-    {% block footer %}{% endblock %}
+<!--/footer -->
+<!-- smooth scrolling -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+         */
+        $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+</script>
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 </body>
 </html>
