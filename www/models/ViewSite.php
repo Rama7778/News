@@ -36,13 +36,5 @@
         'icon_text_service_3' => 'icon_title_service_3',
         'icon_title_service_4' => 'icon_title_service_4',
         'icon_text_service_4' => 'icon_title_service_4',
-
-
-
-
-
-
-
-
-
+        'mail' => 'mailto:info@example.com'
     ));
