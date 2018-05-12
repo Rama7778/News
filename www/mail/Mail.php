@@ -15,8 +15,8 @@ class Mail {
         $mail->Port = 25;
         $mail->setFrom('rama7777ch@yandex.ru', 'Dr. dred');
         $mail->addAddress('rama777@mail.ru');
-        $mail->Subject = 'News';
-        $mail->Body ='News add';
+        $mail->Subject = 'SiteController';
+        $mail->Body ='SiteController add';
         if(!$mail->send()) {
             echo 'Message could not be sent.';
             echo 'Mailer Error: ' . $mail->ErrorInfo;

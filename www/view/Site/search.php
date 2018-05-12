@@ -1,7 +1,7 @@
 <?php
 if (!empty (self::$news) ) {
     foreach (self::$news as $m):
-        echo '<a href="/News/One/' . $m->id . '">' . $m->title . '</a>' . '<br>';
+        echo '<a href="/SiteController/One/' . $m->id . '">' . $m->title . '</a>' . '<br>';
     endforeach;
 }
 else {

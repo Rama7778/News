@@ -6,7 +6,7 @@ use Application\Models\View;
 
 require_once __DIR__ . '/../autoload.php';
 
-class Admin {
+class AdminController {
     protected $id;
     protected $title;
     protected $text;

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../models/News.php';
+require_once __DIR__ . '/../models/SiteController.phproller.php';
    echo newsAdd();
 ?>
 <br>
