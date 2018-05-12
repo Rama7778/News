@@ -1,7 +1,14 @@
 <?php
 require_once __DIR__ . '/autoload.php';
 use Yaurau\Controllers\SiteController;
-SiteController::viewSite();
+use Yaurau\Controllers\AdminController;
+
+if($_GET['id'] == 'admin'){
+ AdminController::viewAdminPanel();
+}
+else{
+    SiteController::viewSite();
+}
 ?>
 
 
