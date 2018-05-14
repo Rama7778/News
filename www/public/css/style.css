@@ -55,6 +55,13 @@ label{
     padding: 26px 0 26px 0px;
         background: rgba(26, 94, 113, 0.56);
 }
+.top-bar-admin {
+
+	width: 100%;
+	z-index: 99999;
+	padding: 26px 0 26px 0px;
+	background: rgb(35,33,33);
+}
 /*-- Logo --*/
 .logo {
 	width: 60%;

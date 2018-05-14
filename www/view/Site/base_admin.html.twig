@@ -61,11 +61,11 @@
 <body>
 
 <!--Header-->
-<div class="header">
+
     <!--Top-Bar-->
-    <div class="top-bar">
+    <div class="top-bar-admin">
         <div class="container">
-            <div class="header-nav">
+
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -82,18 +82,37 @@
                         <nav class="linkEffects linkHoverEffect_12">
                             <ul>
                                 <li><a class="active" href="../../index.php"><span>Home</span></a></li>
-                                <li><a class="scroll" href="#about"><span>About</span></a></li>
-                                <li><a class="scroll" href="#service"><span>Services</span></a></li>
-                                <li><a class="scroll" href="#gallery"><span>Gallery</span></a></li>
-                                <li><a class="scroll" href="#contact"><span>Contact</span></a></li>
+
                             </ul>
                         </nav>
                     </div>
                 </nav>
             </div>
         </div>
-    </div>
+
+
     <!--//Top-Bar-->
+<!--about-->
+
+<br>
+        <form class="form-inline">
+            <label class="sr-only" for="inlineFormInput">Name</label>
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Jane Doe">
+
+            <label class="sr-only" for="inlineFormInputGroup">Username</label>
+            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                <div class="input-group-addon">@</div>
+                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+            </div>
+
+            <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
     <!--footer-->
 
@@ -133,24 +152,8 @@
         </div>
 
     </div>
-</div>
+
 <!--/footer -->
-<!-- smooth scrolling -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        /*
-         var defaults = {
-         containerID: 'toTop', // fading element id
-         containerHoverID: 'toTopHover', // fading element hover id
-         scrollSpeed: 1200,
-         easingType: 'linear'
-         };
-         */
-        $().UItoTop({ easingType: 'easeOutQuart' });
-    });
-</script>
-<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!-- //smooth scrolling -->
-<script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>
+
 </body>
 </html>
