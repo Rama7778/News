@@ -3,3 +3,4 @@
 /composer.phar
 /www/PDOErrors.txt
 /www/cache/compilation_cache/
+/vendor/
