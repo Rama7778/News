@@ -4,9 +4,8 @@ use Yaurau\Controllers\SiteController;
 use Yaurau\Controllers\AdminController;
 
 if($_GET['id'] == 'login'){
- AdminController::viewLogin();
-}
-else{
+    AdminController::viewAdminPanel();
+} else {
     SiteController::viewSite();
 }
 ?>
