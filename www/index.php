@@ -8,6 +8,11 @@ if($_GET['id'] == 'login'){
 } else {
     SiteController::viewSite();
 }
+
+
+$data = new Database;
+var_dump ($data->authorizationForm());
+
 ?>
 
 
