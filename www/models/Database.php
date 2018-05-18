@@ -1,5 +1,7 @@
 <?php
-
+namespace Yaurau\Models;
+use \PDO;
+use \PDOException;
 
 class Database
 {
@@ -25,10 +27,10 @@ protected $className;
                 file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
          }
     }
-    public function query ($sql)
+    public function query ($sql, $parameter = [])
     {
-        $sth = $this->dbn->query($sql);
-        //$sth->execute($parameter);
+        $sth = $this->dbn->prepare($sql);
+        $sth->execute($parameter);
         return $result = $sth->fetchAll();
     }
     public function execute ($sql, $parameter = [])
@@ -36,8 +38,12 @@ protected $className;
         $sth = $this->dbn->prepare($sql);
         return $sth->execute($parameter);
     }
-    public function authorizationForm()
+    static public function authorizationForm()
     {
-        return $authorization =  $this->query('SELECT * FROM `login`');
+        $authorization = new Database();
+        return $authorization->query('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
+            ':email' => $_POST['email'],
+             ':password' => $_POST['password']
+        ]);
     }
 }

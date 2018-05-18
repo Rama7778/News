@@ -2,17 +2,15 @@
 require_once __DIR__ . '/autoload.php';
 use Yaurau\Controllers\SiteController;
 use Yaurau\Controllers\AdminController;
+use Yaurau\Models\Database;
+
 
 if($_GET['id'] == 'login'){
     AdminController::viewAdminPanel();
 } else {
     SiteController::viewSite();
 }
-
-
-$data = new Database;
-var_dump ($data->authorizationForm());
-
+Database::authorizationForm();
 ?>
 
 

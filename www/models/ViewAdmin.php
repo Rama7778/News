@@ -1,7 +1,7 @@
 <?php
 $loader = new Twig_Loader_Filesystem(__DIR__ . '/../view/Site');
 $twig = new Twig_Environment($loader);
-echo $twig->render('login.html.twig', array(
+echo $twig->render('admin.html.twig', array(
     'name' => 'Yaurau Framework',
     'creater' => 'Yaurau Framework',
     'title' => 'Yaurau Framework',
