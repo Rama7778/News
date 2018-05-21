@@ -320,7 +320,7 @@ nav.linkEffects.linkHoverEffect_12 ul {
     font-weight: 900;
     color: #FFF;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    text-trans: uppercase;
     margin: 2px 0px 10px;
 }
 .slider-info p {
@@ -339,7 +339,7 @@ nav.linkEffects.linkHoverEffect_12 ul {
     font-size: 45px;
     color: #b56d10;
     letter-spacing: 3px;
-    text-transform:uppercase;
+    text-trans:uppercase;
     margin-top: 7px;
 }
 h6 {
@@ -349,7 +349,7 @@ h6 {
 h6 a{
     cursor:pointer;
     font-size:15px;
-    text-transform:uppercase;
+    text-trans:uppercase;
 }
 .callbacks_tabs {
     list-style: none;
@@ -389,7 +389,7 @@ h6 a{
 a.navbar-brand img {
     display: inline-block;
 }
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+.navbar-default .navbar-collapse, .navbar-default .navbar- {
     padding: 0;
 }
 .navbar-default .navbar-brand:hover {
@@ -467,10 +467,10 @@ nav.linkEffects.linkHoverEffect_12 {
     position: absolute;
     left: 0;
     top: 0;
-    -moz-transform: scaleY(0);
-    -ms-transform: scaleY(0);
-    -webkit-transform: scaleY(0);
-    transform: scaleY(0);
+    -moz-trans: scaleY(0);
+    -ms-trans: scaleY(0);
+    -webkit-trans: scaleY(0);
+    trans: scaleY(0);
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
@@ -484,10 +484,10 @@ nav.linkEffects.linkHoverEffect_12 {
     position: absolute;
     right: 0;
     top: 0;
-    -moz-transform: scaleY(0);
-    -ms-transform: scaleY(0);
-    -webkit-transform: scaleY(0);
-    transform: scaleY(0);
+    -moz-trans: scaleY(0);
+    -ms-trans: scaleY(0);
+    -webkit-trans: scaleY(0);
+    trans: scaleY(0);
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
@@ -501,10 +501,10 @@ nav.linkEffects.linkHoverEffect_12 {
     position: absolute;
     left: 0;
     top: 0;
-    -moz-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
+    -moz-trans: scaleX(0);
+    -ms-trans: scaleX(0);
+    -webkit-trans: scaleX(0);
+    trans: scaleX(0);
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
@@ -518,10 +518,10 @@ nav.linkEffects.linkHoverEffect_12 {
     position: absolute;
     left: 0px;
     bottom: 0;
-    -moz-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
+    -moz-trans: scaleX(0);
+    -ms-trans: scaleX(0);
+    -webkit-trans: scaleX(0);
+    trans: scaleX(0);
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     -webkit-transition: 0.3s;
@@ -531,16 +531,16 @@ nav.linkEffects.linkHoverEffect_12 {
     color: #f9f7f5;
 }
 .linkHoverEffect_12  a:hover::before, .linkHoverEffect_12  a:hover::after {
-    -moz-transform: scaleX(1);
-    -ms-transform: scaleX(1);
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+    -moz-trans: scaleX(1);
+    -ms-trans: scaleX(1);
+    -webkit-trans: scaleX(1);
+    trans: scaleX(1);
 }
 .linkHoverEffect_12  a:hover span::before, .linkHoverEffect_12  a:hover span::after {
-    -moz-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1);
+    -moz-trans: scaleY(1);
+    -ms-trans: scaleY(1);
+    -webkit-trans: scaleY(1);
+    trans: scaleY(1);
 }
 
 /*-- //Banner-Slider --*/
@@ -559,7 +559,7 @@ h3.tittle{
     font-size: 30px;
     text-align: center;
     margin-bottom: 10px;
-    text-transform: uppercase;
+    text-trans: uppercase;
 }
 h3.tittle.two{
     color: #ffffff;
@@ -595,7 +595,7 @@ h3.tittle span{
     line-height: 59px;
 }
 .offer-grid h4 {
-    text-transform: uppercase;
+    text-trans: uppercase;
     font-size: 18px;
     margin: 33px 0px 11px;
 }
@@ -624,7 +624,7 @@ h3.tittle span{
 }
 .readmore-w3 a {
     background: rgba(26, 94, 113, 0.83);
-    text-transform: uppercase;
+    text-trans: uppercase;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -o-border-radius: 6px;
@@ -680,7 +680,7 @@ h3.tittle span{
     color:#000000;
     font-size:30px;
     margin-bottom: 10px;
-    text-transform:uppercase;
+    text-trans:uppercase;
 }
 .right-header-w3ls h5 span{
     color:#1a5e71;
@@ -695,7 +695,7 @@ h3.tittle span{
     padding: 0px 97px;
 }
 .grid h4 {
-    text-transform: uppercase;
+    text-trans: uppercase;
     font-size: 18px;
     margin-bottom: 8px;
 }
@@ -850,11 +850,11 @@ ul.top-icons.team-icon {
 }
 .team-icon li:hover {
     background:#E6870A;
-    -webkit-transform: rotateY(360deg);
-    -moz-transform: rotateY(360deg);
-    -o-transform: rotateY(360deg);
-    -ms-transform: rotateY(360deg);
-    transform: rotateY(360deg);
+    -webkit-trans: rotateY(360deg);
+    -moz-trans: rotateY(360deg);
+    -o-trans: rotateY(360deg);
+    -ms-trans: rotateY(360deg);
+    trans: rotateY(360deg);
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
@@ -1026,7 +1026,7 @@ ul.top-icons.team-icon {
     padding: 0 0;
     margin: 5px 20px 10px 20px;
     font-weight: normal;
-    text-transform: capitalize;
+    text-trans: capitalize;
     color: rgba(255,255,255,0.9);
     text-align: center;
     font-size:0.95em;
@@ -1038,7 +1038,7 @@ ul.top-icons.team-icon {
     font-size: 2.3em;
     margin: 2em 0 0 0;
     text-align: center;
-    text-transform: capitalize;
+    text-trans: capitalize;
     font-family: 'Roboto Condensed', sans-serif;
 }
 .da-thumbs li a div h5 span {
@@ -1107,16 +1107,16 @@ h5.tittle{
     color: #1a5e71;
     font-size: 33px;
     margin-bottom: 80px;
-    text-transform: uppercase;
+    text-trans: uppercase;
     text-align: center;
 }
-form {
+ {
     padding-bottom: 70px;
     width: 70%;
     margin: 0 auto;
     margin-top: 50px;
 }
-form.form-inline {
+.-inline {
     width: 75%;
     margin: 0 auto;
 }
@@ -1149,7 +1149,7 @@ textarea {
     padding: 0px 0px 20px;
     width: 74%;
     margin: 0 auto;
-    text-transform: uppercase;
+    text-trans: uppercase;
     font-size: 14px;
 }
 .footer-head-agile ul li{
@@ -1167,7 +1167,7 @@ span.fa-icon-w3 i {
     font-size: 20px;
     margin: 16px 0px;
     color:#ffffff;
-    text-transform: uppercase;
+    text-trans: uppercase;
 }
 .logo-w3ls h2 a {
     font-size: 19px;
@@ -1176,7 +1176,7 @@ span.fa-icon-w3 i {
     border: 2px solid #fff;
     color: #fff;
     text-decoration: none;
-    text-transform: capitalize;
+    text-trans: capitalize;
 }
 
 .aboutus-right-wthree{
@@ -1200,11 +1200,11 @@ span.fa-icon-w3 i {
 }
 .aboutus-right-wthree ul li:hover{
     background:#b56d10;
-    -webkit-transform: rotateY(360deg);
-    -moz-transform: rotateY(360deg);
-    -o-transform: rotateY(360deg);
-    -ms-transform: rotateY(360deg);
-    transform: rotateY(360deg);
+    -webkit-trans: rotateY(360deg);
+    -moz-trans: rotateY(360deg);
+    -o-trans: rotateY(360deg);
+    -ms-trans: rotateY(360deg);
+    trans: rotateY(360deg);
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
@@ -1222,7 +1222,7 @@ span.fa-icon-w3 i {
 .news-letter-agileits-w3layouts p {
     font-size: 14px;
 }
-.news-letter-agileits-w3layouts form {
+.news-letter-agileits-w3layouts  {
     margin: 0px;
 }
 .news-letter-agileits-w3layouts input[type="email"] {
@@ -1279,7 +1279,7 @@ span.fa-icon-w3 i {
 .footer-grid1-right span {
     color: rgba(26, 94, 113, 0.83);
     font-size: 12px;
-    text-transform: capitalize;
+    text-trans: capitalize;
 }
 /*--copy-right--*/
 .copy {
@@ -1633,7 +1633,7 @@ span.fa-icon-w3 i {
     .da-thumbs li a div p {
         font-size: 14px;
     }
-    form {
+     {
         width: 95%;
     }
     input[type="email"] {
@@ -1879,7 +1879,7 @@ span.fa-icon-w3 i {
     .gallery {
         padding: 35px 0px 45px;
     }
-    form {
+     {
         width: 87%;
     }
     input[type="text"], input[type="email"] {
@@ -1892,7 +1892,7 @@ span.fa-icon-w3 i {
         font-size: 17px;
         padding: 4px 20px;
     }
-    form {
+     {
         padding-bottom: 45px;
     }
     .logo-w3ls h2 a {
@@ -2192,7 +2192,7 @@ span.fa-icon-w3 i {
     .da-thumbs li a div h5 {
         margin: 64px 0 0 0;
     }
-    form {
+     {
         width: 92%;
         margin-top: 31px;
     }
@@ -2215,7 +2215,7 @@ span.fa-icon-w3 i {
         margin-top: 24px;
         margin-bottom: 7px;
     }
-    .news-letter-agileits-w3layouts form input[type="submit"] {
+    .news-letter-agileits-w3layouts  input[type="submit"] {
         margin-top: 12px;
     }
     .from-blog-w3-agile {
@@ -2303,7 +2303,7 @@ span.fa-icon-w3 i {
     textarea {
         margin-top: 10px;
     }
-    form {
+     {
         width: 82%;
     }
     input[type="submit"] {
@@ -2433,7 +2433,7 @@ span.fa-icon-w3 i {
         margin-top: 43px;
         font-size: 24px;
     }
-    form {
+     {
         width: 95%;
     }
     .contact-agile, .mail {
@@ -2589,7 +2589,7 @@ span.fa-icon-w3 i {
     .gallery {
         padding: 30px 0px 35px;
     }
-    form {
+     {
         padding-bottom: 35px;
     }
     input[type="submit"] {
@@ -2656,7 +2656,7 @@ span.fa-icon-w3 i {
     .price-grid {
         width: 85%;
     }
-    form {
+     {
         width: 100%;
     }
     .logo-w3ls h2 a {

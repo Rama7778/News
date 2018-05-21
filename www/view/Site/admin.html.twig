@@ -2,184 +2,90 @@
 {% block data %}
     <div class="container">
         <h1>Панель администратора</h1>
+        <br>
         <form>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Заголовок</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'title'>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Название сайта</label>
+                    <input type="text" class="form-control" name = 'title'>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Первый заголовок</label>
+                    <input type="text" class="form-control" name = 'title' name = 'what_we'>
+                </div>
+            </div><hr>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Первый подзаголовок</label>
+                    <input type="text" class="form-control" name = 'we_offer_our_customers'>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Первый заголовок</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'what_we'>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>Главная надпись под первой иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_title_offer_1'>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Главная надпись под второй иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_title_offer_2'>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Главная надпись под третьей иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_title_offer_3'>
                 </div>
             </div>
-            <div class="form-group row">
-                <label>Первый подзаголовок</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label"  name = 'we_offer_our_customers'>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label>Второстепенная надпись под 1-ой иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_text_offer_1'>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Второстепенная надпись под 2-ой иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_text_offer_2'>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label>Второстепенная надпись под 3-ей иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_text_offer_3'>
+                </div>
+            </div><hr>
+    <div class="row">
+
+            </div>
+            <div class="row">
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Второй заголовок</label>
+                    <input type="text" class="form-control" name = 'Our' >
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Главная надпись под первой иконкой</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'icon_title_offer_1'>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Второй подзаголовок</label>
+                    <input type="text" class="form-control" name = 'service'>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Второстепенная надпись под первой иконкой</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'icon_text_offer_1'>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Главная надпись под второй иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_title_offer_2'>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Главная надпись под второй иконкой</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'icon_title_offer_2'>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Второстепенная надпись под второй</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'icon_text_offer_2'>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Главная надпись под третьей иконкой</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'icon_title_offer_3'>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Второстепенная надпись под третьей иконкой</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" name = 'icon_text_offer_3'>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>v            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Главная надпись под второй иконкой</label>
+                    <input type="text" class="form-control" name = 'icon_title_offer_2'>
                 </div>
             </div>
 
-
-
-
-
-
-
-            <input type="submit" class="btn btn-primary">
+<br>
+            <button class="btn btn-primary" type="submit">Submit form</button>
         </form>
+        <br>
     </div>
 
 {% endblock %}
