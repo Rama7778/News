@@ -11,6 +11,7 @@ if($_GET['id'] == 'login'){
     SiteController::viewSite();
 }
 Database::authorizationForm();
+var_dump($_POST);
 ?>
 
 
