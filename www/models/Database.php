@@ -46,4 +46,8 @@ protected $className;
              ':password' => $_POST['password']
         ]);
     }
+    public function checkCreateSite()
+    {
+        return $create = $this->dbn->query('SELECT email FROM `login`' );
+    }
 }
