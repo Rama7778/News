@@ -6,7 +6,7 @@ class CreateController
 {
     public static function viewCreatePanel()
     {
-        $path = 'login.html.twig';
+        $path = 'create.html.twig';
         $array = [
             'name' => 'Yaurau Framework',
             'creater' => 'Yaurau Framework',

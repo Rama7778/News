@@ -36,7 +36,7 @@ protected $className;
     public function execute ($sql, $parameter = [])
     {
         $sth = $this->dbn->prepare($sql);
-        return $sth->execute($parameter);
+        $sth->execute($parameter);
     }
     static public function authorizationForm()
     {
@@ -49,5 +49,22 @@ protected $className;
     public function checkCreateSite()
     {
         return $create = $this->dbn->query('SELECT email FROM `login`' );
+    }
+    static public function createTable()
+    {
+        $create = new Database();
+        $create->execute('CREATE TABLE login (
+            id INT(11) NOT NULL AUTO_INCREMENT,
+            :email text(50),
+:password text(50),			
+            PRIMARY KEY(`id`))' , [
+            ':email' => 'email',
+            ':password' => 'password'
+        ]);
+        $create->execute('INSERT INTO `login`(`email`, `login`) VALUES (:email,:password)' , [
+            ':email' => $_POST['new_email'],
+            ':password' => $_POST['new_password']
+        ]);
+
     }
 }
