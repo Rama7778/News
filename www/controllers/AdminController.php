@@ -8,10 +8,31 @@ class AdminController
     public static function viewAdminPanel()
     {
         if (Database::authorizationForm()) {
-            include_once __DIR__ . '/../models/ViewAdmin.php';
+            $path = 'admin.html.twig';
+            $array = [
+                'name' => 'Yaurau Framework',
+                'creater' => 'Yaurau Framework',
+                'title' => 'Yaurau Framework',
+                'what_we' => 'what we',
+                'we_offer_our_customers' => 'we offer our customers',
+                'Our' => 'Our',
+                'service' => 'service',
+                'Projects' => 'Projects'
+                ];
         } else {
-            include_once __DIR__ . '/../models/ViewLogin.php';
+            $path = 'login.html.twig';
+            $array = [
+                'name' => 'Yaurau Framework',
+                'creater' => 'Yaurau Framework',
+                'title' => 'Yaurau Framework',
+                'what_we' => 'what we',
+                'we_offer_our_customers' => 'we offer our customers',
+                'Our' => 'Our',
+                'service' => 'service',
+                'Projects' => 'Projects'
+            ];
         }
+        include_once __DIR__ . '/../view/ViewSite.php';
     }
 }
 
