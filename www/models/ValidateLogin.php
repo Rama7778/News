@@ -1,6 +1,7 @@
 <?php
 
 namespace Yaurau\Models;
+use Yaurau\Models\Database;
 
 class ValidateLogin
 {
@@ -11,4 +12,11 @@ class ValidateLogin
             return $row;
         }
     }
+    static public function createTable()
+    {
+        Database::createTable();
+        Database::createAccount();
+
+    }
+
 }
