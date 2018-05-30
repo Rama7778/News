@@ -33,11 +33,16 @@ protected $className;
         $sth->execute($parameter);
         return $result = $sth->fetchAll();
     }
-    public function execute ($sql, $parameter = [])
+    public function exec ($sql)
+    {
+        return $this->dbn->exec($sql);
+    }
+        public function execute ($sql, $parameter = [])
     {
         $sth = $this->dbn->prepare($sql);
         $sth->execute($parameter);
     }
+
     static public function authorizationForm()
     {
         $authorization = new Database();
@@ -53,18 +58,18 @@ protected $className;
     static public function createTable()
     {
         $create = new Database();
-        $create->execute('CREATE TABLE login (
+        $create->exec('CREATE TABLE login (
             id INT(11) NOT NULL AUTO_INCREMENT,
-            :email text(50),
-:password text(50),			
-            PRIMARY KEY(`id`))' , [
-            ':email' => 'email',
-            ':password' => 'password'
-        ]);
-        $create->execute('INSERT INTO `login`(`email`, `login`) VALUES (:email,:password)' , [
+            email text(50), password text(50),			
+            PRIMARY KEY(`id`))'
+       );
+    }
+    static public function createAccount()
+    {
+        $createAccount = new Database();
+        $createAccount->execute('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)' , [
             ':email' => $_POST['new_email'],
             ':password' => $_POST['new_password']
         ]);
-
     }
 }
