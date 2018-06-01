@@ -18,5 +18,9 @@ class ValidateLogin
         Database::createAccount();
 
     }
+    static public function pass()
+    {
+        header('Location:/../view/site/install.php');
+    }
 
 }

@@ -5,21 +5,24 @@ use Yaurau\Controllers\AdminController;
 use Yaurau\Models\ValidateLogin;
 use Yaurau\Controllers\CreateController;
 
+
  if(@ValidateLogin::validate() != NULL) {
      if($_GET['id'] == 'login'){
          AdminController::viewAdminPanel();
      } else {
          SiteController::viewSite();
      }
- } else {
-        CreateController::viewCreatePanel();
-        if(!empty($_POST['new_email'] && $_POST['new_password'])){
+    } else {
+     ValidateLogin::pass();
+}
+/*
+     CreateController::viewCreatePanel();
+        if(isset($_POST['submit'])){
+            //SiteController::viewSite();
             ValidateLogin::createTable();
-            SiteController::viewSite();
+            //SiteController::viewSite();
         }
-
-
- }
+ }*/
 
 ?>
 
