@@ -16,11 +16,12 @@ class ValidateLogin
     {
         Database::createTable();
         Database::createAccount();
-
+        Database::createTableValues();
     }
     static public function pass()
     {
         header('Location:/../view/site/install.php');
+        self::createTable();
     }
 
 }

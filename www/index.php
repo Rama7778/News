@@ -12,9 +12,9 @@ use Yaurau\Controllers\CreateController;
      } else {
          SiteController::viewSite();
      }
-    } else {
+ } else {
      ValidateLogin::pass();
-}
+ }
 /*
      CreateController::viewCreatePanel();
         if(isset($_POST['submit'])){

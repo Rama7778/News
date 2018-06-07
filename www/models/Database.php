@@ -72,4 +72,21 @@ protected $className;
             ':password' => $_POST['new_password']
         ]);
     }
+    static function createTableValues()
+    {
+        $create = new Database();
+        $create->exec('CREATE TABLE value (
+            id INT(11) NOT NULL AUTO_INCREMENT,
+            name text(50), value text(50),			
+            PRIMARY KEY(`id`))'
+        );
+    }
+    static function insertValues($name, $value)
+    {
+        $createAccount = new Database();
+        $createAccount->execute('INSERT INTO `value`(`name`, `value`) VALUES (:name,:value)' , [
+            ':name' => $name,
+            ':value' => $value
+        ]);
+    }
 }
