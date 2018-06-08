@@ -2,6 +2,7 @@
 
 namespace Yaurau\Models;
 use Yaurau\Models\Database;
+use Yaurau\Models\SiteValues;
 
 class ValidateLogin
 {
@@ -22,6 +23,7 @@ class ValidateLogin
     {
         header('Location:/../view/site/install.php');
         self::createTable();
+        SiteValues::baseValues();
     }
 
 }

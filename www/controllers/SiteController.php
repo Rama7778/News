@@ -1,5 +1,6 @@
 <?php
 namespace Yaurau\Controllers;
+use Yaurau\Models\Database;
 use Yaurau\Models\ValidateLogin;
 class SiteController {
     public static function viewSite()
@@ -39,6 +40,7 @@ class SiteController {
                 'icon_text_service_4' => 'icon_title_service_4',
                 'mail' => 'mailto:info@example.com'];
             include_once __DIR__ . '/../view/ViewSite.php';
+            var_dump(Database::receiveBaseValues());
         }
         else {
             $path = 'create.html.twig';

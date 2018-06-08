@@ -48,7 +48,7 @@ protected $className;
         $authorization = new Database();
         return $authorization->query('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
             ':email' => $_POST['email'],
-             ':password' => $_POST['password']
+            ':password' => $_POST['password']
         ]);
     }
     public function checkCreateSite()
@@ -88,5 +88,12 @@ protected $className;
             ':name' => $name,
             ':value' => $value
         ]);
+    }
+    static function receiveBaseValues()
+    {
+        $receive = new Database();
+        $receive->query('SELECT `name`, `value` FROM :value', [
+            ':value' => 'value'
+            ]);
     }
 }
