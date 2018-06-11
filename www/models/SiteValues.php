@@ -47,7 +47,11 @@ class SiteValues
     }
     static public function addValues()
     {
-
+        return Database::receiveBaseValues();
+        /*foreach (Database::receiveBaseValues() as $array){
+            $a = [$array['name'] => $array ['value']];
+            yield $a;
+        }*/
     }
 
 

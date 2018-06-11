@@ -27,11 +27,16 @@ protected $className;
                 file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
          }
     }
-    public function query ($sql, $parameter = [])
+    public function prepare ($sql, $parameter = [])
     {
         $sth = $this->dbn->prepare($sql);
         $sth->execute($parameter);
         return $result = $sth->fetchAll();
+    }
+    public function query ($sql)
+    {
+        $sth = $this->dbn->query($sql);
+        return $result = $sth->fetchAll(PDO::FETCH_OBJ);
     }
     public function exec ($sql)
     {
@@ -46,7 +51,7 @@ protected $className;
     static public function authorizationForm()
     {
         $authorization = new Database();
-        return $authorization->query('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
+        return $authorization->prepare('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
             ':email' => $_POST['email'],
             ':password' => $_POST['password']
         ]);
@@ -91,9 +96,8 @@ protected $className;
     }
     static function receiveBaseValues()
     {
-        $receive = new Database();
-        $receive->query('SELECT `name`, `value` FROM :value', [
-            ':value' => 'value'
-            ]);
+        $sql = 'SELECT `name`, `value` FROM value';
+        $sth = new Database();
+        return $sth->query($sql);
     }
 }
