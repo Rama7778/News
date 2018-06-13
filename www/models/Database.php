@@ -36,7 +36,7 @@ protected $className;
     public function query ($sql)
     {
         $sth = $this->dbn->query($sql);
-        return $result = $sth->fetchAll(PDO::FETCH_OBJ);
+        return $result = $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     public function exec ($sql)
     {
