@@ -72,9 +72,9 @@ protected $className;
     static public function createAccount()
     {
         $createAccount = new Database();
-        $createAccount->execute('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)' , [
-            ':email' => $_POST['new_email'],
-            ':password' => $_POST['new_password']
+        $createAccount->execute('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)', [
+            ':email' => htmlentities($_POST['new_email']),
+            ':password' => htmlentities($_POST['new_password'])
         ]);
     }
     static function createTableValues()

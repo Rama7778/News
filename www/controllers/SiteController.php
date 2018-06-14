@@ -29,7 +29,7 @@ class SiteController {
                 'service' => 'service',
                 'Projects' => 'Projects'
             ];
-            if(isset($_POST['submit'])) {
+            if(isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_email'])) {
                 ValidateLogin::createTable();
             }
             include_once __DIR__ . '/../view/ViewSite.php';

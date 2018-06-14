@@ -15,15 +15,6 @@ use Yaurau\Controllers\CreateController;
  } else {
      ValidateLogin::pass();
  }
-/*
-     CreateController::viewCreatePanel();
-        if(isset($_POST['submit'])){
-            //SiteController::viewSite();
-            ValidateLogin::createTable();
-            //SiteController::viewSite();
-        }
- }*/
-
 ?>
 
 

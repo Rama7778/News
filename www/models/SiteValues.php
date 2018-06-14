@@ -42,13 +42,16 @@ class SiteValues
         foreach ($array as $key=>$value){
             Database::insertValues($key, $value);
         }
-
-
     }
     static public function addValues()
     {
         return Database::receiveBaseValues();
     }
 
+    static public function editValues()
+    {
+        $_POST['icon_text_serv'];
+
+    }
 
 }
