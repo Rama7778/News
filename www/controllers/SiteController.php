@@ -19,6 +19,10 @@ class SiteController {
             include_once __DIR__ . '/../view/ViewSite.php';
         } else {
             ValidateLogin::pass();
+            if(isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_email'])){
+                ValidateLogin::createTable();
+                SiteValues::baseValues();
+            }
         }
     }
 }
