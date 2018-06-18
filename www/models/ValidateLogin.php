@@ -22,8 +22,6 @@ class ValidateLogin
     static public function pass()
     {
         header('Location:/../view/site/install.php');
-        self::createTable();
-        SiteValues::baseValues();
     }
 
 }

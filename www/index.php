@@ -5,15 +5,10 @@ use Yaurau\Controllers\AdminController;
 use Yaurau\Models\ValidateLogin;
 use Yaurau\Controllers\CreateController;
 
-
- if(@ValidateLogin::validate() != NULL) {
-     if($_GET['id'] == 'login'){
+ if(@ValidateLogin::validate() != NULL && $_GET['id'] == 'login') {
          AdminController::viewAdminPanel();
-     } else {
-         SiteController::viewSite();
-     }
  } else {
-     ValidateLogin::pass();
+         SiteController::viewSite();
  }
 ?>
 

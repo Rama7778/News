@@ -6,7 +6,7 @@ use Yaurau\Models\ValidateLogin;
 class SiteController {
     public static function viewSite()
     {
-        if(ValidateLogin::validate() != NULL){
+        if(@ValidateLogin::validate() != NULL){
             $arrayName = [];
             $arrayValue = [];
             $array = [];
@@ -18,21 +18,7 @@ class SiteController {
             $path = 'layout.html.twig';
             include_once __DIR__ . '/../view/ViewSite.php';
         } else {
-            $path = 'create.html.twig';
-            $array = [
-                'name' => 'Yaurau Framework',
-                'creater' => 'Yaurau Framework',
-                'title' => 'Yaurau Framework',
-                'what_we' => 'what we',
-                'we_offer_our_customers' => 'we offer our customers',
-                'Our' => 'Our',
-                'service' => 'service',
-                'Projects' => 'Projects'
-            ];
-            if(isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_email'])) {
-                ValidateLogin::createTable();
-            }
-            include_once __DIR__ . '/../view/ViewSite.php';
+            ValidateLogin::pass();
         }
     }
 }
