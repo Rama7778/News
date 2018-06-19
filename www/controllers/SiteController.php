@@ -20,9 +20,12 @@ class SiteController {
     public static function viewForm()
     {
         if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
+
             ValidateLogin::createTable();
             SiteValues::baseValues();
             header('Location:/');
+            AdminController::viewAdminPanel();
+            var_dump($_POST);
         }
     }
 }
