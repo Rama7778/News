@@ -1,12 +1,10 @@
 <?php
 namespace Yaurau\Controllers;
-use Yaurau\Models\Database;
 use Yaurau\Models\SiteValues;
 use Yaurau\Models\ValidateLogin;
 class SiteController {
     public static function viewSite()
     {
-        if(@ValidateLogin::validate() != NULL){
             $arrayName = [];
             $arrayValue = [];
             $array = [];
@@ -17,12 +15,14 @@ class SiteController {
             }
             $path = 'layout.html.twig';
             include_once __DIR__ . '/../view/ViewSite.php';
-        } else {
-            ValidateLogin::pass();
-            if(isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_email'])){
-                ValidateLogin::createTable();
-                SiteValues::baseValues();
-            }
+        }
+
+    public static function viewForm()
+    {
+        if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
+            ValidateLogin::createTable();
+            SiteValues::baseValues();
+            header('Location:/');
         }
     }
 }
