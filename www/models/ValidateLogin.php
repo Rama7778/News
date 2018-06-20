@@ -3,6 +3,7 @@
 namespace Yaurau\Models;
 use Yaurau\Models\Database;
 use Yaurau\Controllers\CreateController;
+use Yaurau\Controllers\SiteController;
 
 
 class ValidateLogin
@@ -20,10 +21,4 @@ class ValidateLogin
         Database::createAccount();
         Database::createTableValues();
     }
-    static public function pass()
-    {
-        //header('Location:/../view/site/install.php');
-        CreateController::viewCreatePanel();
-    }
-
 }

@@ -1,7 +1,7 @@
 <?php
 namespace Yaurau\Controllers;
 use Yaurau\Models\SiteValues;
-use Yaurau\Models\ValidateLogin;
+
 class SiteController {
     public static function viewSite()
     {
@@ -15,18 +15,7 @@ class SiteController {
             }
             $path = 'layout.html.twig';
             include_once __DIR__ . '/../view/ViewSite.php';
-        }
 
-    public static function viewForm()
-    {
-        if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
-
-            ValidateLogin::createTable();
-            SiteValues::baseValues();
-            header('Location:/');
-            AdminController::viewAdminPanel();
-            var_dump($_POST);
-        }
     }
 }
 
