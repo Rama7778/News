@@ -15,7 +15,6 @@ use Yaurau\Models\ValidateLogin;
  } else {
      CreateController::viewCreatePanel();
      CreateTable::create();
-
  }
 ?>
 
