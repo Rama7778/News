@@ -58,7 +58,7 @@ protected $className;
     }
     public function checkCreateSite()
     {
-        return $create = $this->dbn->query('SELECT email FROM `login`' );
+        return $create = $this->dbn->query('SELECT email FROM `login` IF ' );
     }
     static public function createTable()
     {

@@ -1,8 +1,7 @@
 <?php
 namespace Yaurau\Controllers;
 require_once __DIR__ .'/../autoload.php';
-use Yaurau\Models\Database;
-use Yaurau\Models\SiteValues;
+use Yaurau\Models\{SiteValues, Database};
 
 class AdminController
 {
