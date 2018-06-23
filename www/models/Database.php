@@ -33,7 +33,7 @@ protected $className;
         $sth->execute($parameter);
         return $result = $sth->fetchAll();
     }
-    public function query ($sql)
+    public function setQuery ($sql)
     {
         $sth = $this->dbn->query($sql);
         return $result = $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -58,7 +58,7 @@ protected $className;
     }
     public function checkCreateSite()
     {
-        return $create = $this->dbn->query('SELECT email FROM `login` IF ' );
+        return $this->setQuery('SHOW TABLES');
     }
     static public function createTable()
     {
@@ -98,6 +98,6 @@ protected $className;
     {
         $sql = 'SELECT `name`, `value` FROM value';
         $sth = new Database();
-        return $sth->query($sql);
+        return $sth->setQuery($sql);
     }
 }
