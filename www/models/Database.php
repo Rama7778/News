@@ -5,9 +5,10 @@ use \PDOException;
 
 class Database
 {
-public $query;
-private $dbn;
-protected $className;
+    public $query;
+    private $dbn;
+    protected $className;
+    public $connect;
     public function __construct()
     {
         try {
@@ -20,7 +21,7 @@ protected $className;
              ' Date ' . getdate()['mday'].'.' . getdate()['month'] . '.' . getdate()['year'] . '///';
                 echo time() . $e->getFile();
                 //View::display('error403.php');
-                LogFiles::putContents($mess);
+//                LogFiles::putContents($mess);
                 "Хьюстон, у нас проблемы.";
                 file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
          }
@@ -61,7 +62,7 @@ protected $className;
     static public function createTable()
     {
         $create = new Database();
-        $create->exec('CREATE TABLE login (
+        $create->setQuery('CREATE TABLE login (
             id INT(11) NOT NULL AUTO_INCREMENT,
             email text(50), password text(50),			
             PRIMARY KEY(`id`))'
@@ -78,24 +79,10 @@ protected $className;
     static function createTableValues()
     {
         $create = new Database();
-        $create->exec('CREATE TABLE value (
+        $create->setQuery('CREATE TABLE value (
             id INT(11) NOT NULL AUTO_INCREMENT,
             name text(50), value text(50),			
             PRIMARY KEY(`id`))'
         );
-    }
-    static function setValues($name, $value)
-    {
-        $createAccount = new Database();
-        $createAccount->setPreparedQuery('INSERT INTO `value`(`name`, `value`) VALUES (:name,:value)' , [
-            ':name' => $name,
-            ':value' => $value
-        ]);
-    }
-    static function getBaseValues()
-    {
-        $sql = 'SELECT `name`, `value` FROM value';
-        $sth = new Database();
-        return $sth->getValues($sql);
     }
 }

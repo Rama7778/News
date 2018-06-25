@@ -2,7 +2,8 @@
 require_once __DIR__ . '/autoload.php';
 use Yaurau\Controllers\{SiteController, AdminController, CreateController};
 use Yaurau\Models\{CreateTable, ValidateLogin};
-
+$a = new \Yaurau\Models\Database();
+var_dump($a->checkCreateSite());
 if($_GET['id'] == 'login') {
     AdminController::viewAdminPanel();
  } elseif(ValidateLogin::validate() == true){
