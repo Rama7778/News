@@ -40,12 +40,12 @@ class SiteValues
             'icon_text_service_4' => 'icon_title_service_4',
             'mail' => 'mailto:info@example.com'];
         foreach ($array as $key=>$value){
-            Database::insertValues($key, $value);
+            Database::setValues($key, $value);
         }
     }
     static public function addValues()
     {
-        return Database::receiveBaseValues();
+        return Database::getBaseValues();
     }
 
     static public function editValues()

@@ -18,8 +18,6 @@ protected $className;
          catch(PDOException $e) {
                 $mess = $e->getMessage() . ' Time ' . getdate()['hours'] . ':' . getdate()['minutes']  .
              ' Date ' . getdate()['mday'].'.' . getdate()['month'] . '.' . getdate()['year'] . '///';
-
-
                 echo time() . $e->getFile();
                 //View::display('error403.php');
                 LogFiles::putContents($mess);
@@ -27,22 +25,22 @@ protected $className;
                 file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
          }
     }
-    public function prepare ($sql, $parameter = [])
+    public function getAll ($sql, $parameter = [])
     {
         $sth = $this->dbn->prepare($sql);
         $sth->execute($parameter);
         return $result = $sth->fetchAll();
     }
-    public function setQuery ($sql)
+    public function getValues ($sql)
     {
         $sth = $this->dbn->query($sql);
         return $result = $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function exec ($sql)
+    public function setQuery ($sql)
     {
-        return $this->dbn->exec($sql);
+        return $this->dbn->query($sql);
     }
-        public function execute ($sql, $parameter = [])
+        public function setPreparedQuery ($sql, $parameter = [])
     {
         $sth = $this->dbn->prepare($sql);
         $sth->execute($parameter);
@@ -51,7 +49,7 @@ protected $className;
     static public function authorizationForm()
     {
         $authorization = new Database();
-        return $authorization->prepare('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
+        return $authorization->getAll('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
             ':email' => $_POST['email'],
             ':password' => $_POST['password']
         ]);
@@ -72,7 +70,7 @@ protected $className;
     static public function createAccount()
     {
         $createAccount = new Database();
-        $createAccount->execute('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)', [
+        $createAccount->setPreparedQuery('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)', [
             ':email' => htmlentities($_POST['new_email']),
             ':password' => htmlentities($_POST['new_password'])
         ]);
@@ -86,18 +84,18 @@ protected $className;
             PRIMARY KEY(`id`))'
         );
     }
-    static function insertValues($name, $value)
+    static function setValues($name, $value)
     {
         $createAccount = new Database();
-        $createAccount->execute('INSERT INTO `value`(`name`, `value`) VALUES (:name,:value)' , [
+        $createAccount->setPreparedQuery('INSERT INTO `value`(`name`, `value`) VALUES (:name,:value)' , [
             ':name' => $name,
             ':value' => $value
         ]);
     }
-    static function receiveBaseValues()
+    static function getBaseValues()
     {
         $sql = 'SELECT `name`, `value` FROM value';
         $sth = new Database();
-        return $sth->setQuery($sql);
+        return $sth->getValues($sql);
     }
 }
