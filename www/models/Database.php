@@ -55,10 +55,6 @@ class Database
             ':password' => $_POST['password']
         ]);
     }
-    public function checkCreateSite()
-    {
-        return $this->setQuery('SHOW TABLES');
-    }
     static public function createTable()
     {
         $create = new Database();

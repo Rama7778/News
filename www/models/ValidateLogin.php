@@ -10,7 +10,7 @@ class ValidateLogin
 {
     static public function validate()
     {
-        $data = new Database;
+        $data = new Check;
         if($data->checkCreateSite() != null){
                 return true;
         } else {
