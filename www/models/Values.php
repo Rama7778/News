@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: User
- * Date: 25.06.2018
- * Time: 19:51
- */
-
 namespace Yaurau\Models;
+
 use Yaurau\Models\Database;
 
 class Values extends Database

@@ -1,11 +1,11 @@
 <?php
 namespace Yaurau\Models;
-use Yaurau\Models\Database;
 
+use Yaurau\Models\Database;
 
 class SiteValues
 {
-    static public function baseValues()
+    static public function setBaseValues()
     {
         $array = ['name' => 'Yaurau Framework',
             'creater' => 'Yaurau Framework',

@@ -1,27 +1,22 @@
 <?php
 
 namespace Yaurau\Models;
+
 use Yaurau\Models\Database;
 use Yaurau\Controllers\CreateController;
 use Yaurau\Controllers\SiteController;
 
-
-class ValidateLogin
+class Validate
 {
-    static public function validate()
+    static public function checkLogin()
     {
         $data = new Check;
-        if($data->checkCreateSite() != null){
+        if($data->createSite() != null){
                 return true;
         } else {
             return false;
         }
 
     }
-    static public function createTable()
-    {
-        Database::createTable();
-        Database::createAccount();
-        Database::createTableValues();
-    }
+
 }

@@ -1,5 +1,6 @@
 <?php
 namespace Yaurau\Models;
+
 use \PDO;
 use \PDOException;
 
