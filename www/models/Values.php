@@ -6,8 +6,10 @@ use Yaurau\Models\Database;
 class Values extends Database
 {
     public $connect;
+
     public function __construct()
     {
+        parent::__construct();
         $this->connect = new Database();
     }
 
@@ -22,4 +24,12 @@ class Values extends Database
     {
        return  $this->connect->getValues('SELECT `name`, `value` FROM value');
     }
+    public function insert()
+    {
+        $this->connect->setPreparedQuery('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)', [
+            ':email' => htmlentities($_POST['new_email']),
+            ':password' => htmlentities($_POST['new_password'])
+        ]);
+    }
+
 }

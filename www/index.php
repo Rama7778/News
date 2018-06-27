@@ -1,13 +1,13 @@
 <?php
 require_once __DIR__ . '/autoload.php';
 use Yaurau\Controllers\{SiteController, AdminController, CreateController};
-use Yaurau\Models\{Table, Validate, Check};
+use Yaurau\Models\{Tables, Validate, Check};
 
 if($_GET['id'] == 'login') {
     AdminController::viewAdminPanel();
- } elseif(Validate::checkLogin() == true){
+ } elseif(Check::checkLogin() == true){
      SiteController::viewSite();
- } elseif (Table::create() == true) {
+ } elseif (Check::setForm() == true) {
      AdminController::getAdminPanel();
  } else {
      CreateController::viewCreatePanel();

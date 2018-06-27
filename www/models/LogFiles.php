@@ -1,4 +1,6 @@
 <?php
+namespace Yaurau\Models;
+
 class LogFiles
 {
     static public function putContents ($e) {
