@@ -1,8 +1,6 @@
 <?php
 namespace Yaurau\Models;
 
-use Yaurau\Models\Database;
-
 class SiteValues
 {
     static public function setBaseValues()
@@ -49,11 +47,4 @@ class SiteValues
         $val = new Values();
         return $val->getBaseValues();
     }
-
-    static public function editValues()
-    {
-        $_POST['icon_text_serv'];
-
-    }
-
 }

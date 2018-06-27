@@ -4,6 +4,7 @@ namespace Yaurau\Models;
 class Check extends Database
 {
     private  $authorization;
+
     public function __construct()
     {
         parent::__construct();

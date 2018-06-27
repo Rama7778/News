@@ -1,14 +1,9 @@
 <?php
-
 namespace Yaurau\Models;
 
-interface Table
+class Tables extends Database
 {
-    public function create();
-}
-class Tables extends Database implements Table
-{
-    public $create;
+    private $create;
 
     public function __construct()
     {

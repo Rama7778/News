@@ -1,8 +1,6 @@
 <?php
 namespace Yaurau\Models;
 
-use Yaurau\Models\Database;
-
 class Values extends Database
 {
     public $connect;
