@@ -3,7 +3,7 @@
     <div class="container">
         <h1>Панель администратора</h1>
         <br>
-        <form method="post">
+        <form method="post" action="https://httpbin.org/post">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label>Название сайта</label>
@@ -169,4 +169,7 @@
         </form>
         <br>
     </div>
+    <script>
+        $('form').fajax();
+    </script>
 {% endblock %}
