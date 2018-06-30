@@ -9,7 +9,7 @@
         return this.each(function() {
 
             $(this).on('submit', function(e) {
-
+                e.preventDefault();
                 var $form = $(this);
                 var action = $form.attr('action');
                 var method;

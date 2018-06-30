@@ -1,13 +1,16 @@
 <?php
 namespace Yaurau\Controllers;
 require_once __DIR__ .'/../autoload.php';
-use Yaurau\Models\{SiteValues, Database};
+use Yaurau\Models\{
+    Check, SiteValues, Database
+};
 
 class AdminController
 {
     public static function viewAdminPanel()
     {
-        if (Database::authorizationForm()) {
+        $check = new Check();
+        if ($check->authorizationForm()) {
             self::getAdminPanel();
         } else {
             $path = 'login.html.twig';
