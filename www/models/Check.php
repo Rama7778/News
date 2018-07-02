@@ -21,6 +21,8 @@ class Check extends Database
         if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
             $tables= new Tables;
             $tables->create();
+            $values = new Values();
+            $values->insert();
             SiteValues::setBaseValues();
             return 'true';
         }

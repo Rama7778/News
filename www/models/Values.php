@@ -18,10 +18,12 @@ class Values extends Database
             ':value' => $value
         ]);
     }
+
     public function getBaseValues()
     {
        return  $this->connect->getValues('SELECT `name`, `value` FROM value');
     }
+
     public function insert()
     {
         $this->connect->setPreparedQuery('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)', [
