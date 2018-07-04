@@ -1,6 +1,8 @@
 <?php
 namespace Yaurau\Models;
 
+use Yaurau\Models\Database;
+
 class Values extends Database
 {
     public $connect;
@@ -13,10 +15,12 @@ class Values extends Database
 
     public function setValues($name, $value)
     {
-        $this->connect->setPreparedQuery('INSERT INTO `value`(`name`, `value`) VALUES (:name,:value)' , [
+        $this->connect->setPreparedQuery('INSERT INTO `value`(`name`, `value`) VALUES (:name, :value)' , [
             ':name' => $name,
             ':value' => $value
         ]);
+        $str = '\'INSERT INTO `value`(`name`, `value`) VALUES (%s,%s)\' ';
+        echo sprintf($str, $name, $value);
     }
 
     public function getBaseValues()
@@ -26,10 +30,18 @@ class Values extends Database
 
     public function insert()
     {
-        $this->connect->setPreparedQuery('INSERT INTO `login`(`email`, `password`) VALUES (:email,:password)', [
+        $this->connect->setPreparedQuery('INSERT INTO `login`(`email`, `password`) VALUES (:email, :password)', [
             ':email' => htmlentities($_POST['new_email']),
             ':password' => htmlentities($_POST['new_password'])
         ]);
+    }
+    public function updateValues($name, $value)
+    {
+        $this->connect->setPreparedQuery('UPDATE `value` SET `value` = :value WHERE `name`= :name' , [
+            ':name' => $name,
+            ':value' => $value
+        ]);
+
     }
 
 }
