@@ -19,8 +19,6 @@ class Values extends Database
             ':name' => $name,
             ':value' => $value
         ]);
-        $str = '\'INSERT INTO `value`(`name`, `value`) VALUES (%s,%s)\' ';
-        echo sprintf($str, $name, $value);
     }
 
     public function getBaseValues()
@@ -38,10 +36,12 @@ class Values extends Database
     public function updateValues($name, $value)
     {
         $this->connect->setPreparedQuery('UPDATE `value` SET `value` = :value WHERE `name`= :name' , [
-            ':name' => $name,
-            ':value' => $value
+            ':name' => '"'. $name .'"',
+            ':value' => '"' . $value . '"'
         ]);
 
+        /*$str = '\'UPDATE `value` SET `value` = "%s" WHERE `name`= "%s" \' ';
+        echo sprintf($str, $value, $name);*/
     }
 
 }
