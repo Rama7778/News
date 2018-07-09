@@ -15,7 +15,7 @@
                 var method;
                 var data;
 
-                  // e.preventDefault();
+                  e.preventDefault();
 
                 if ($form.attr('method') === undefined) {
                     method = 'GET';

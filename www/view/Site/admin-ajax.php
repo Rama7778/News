@@ -1,9 +1,16 @@
 <?php
 require_once __DIR__ . '/../../autoload.php';
-var_dump($_POST);
+
+$dsn = 'mysql:dbname=yaurau; host=localhost';
+$dbn = new PDO($dsn, 'root', '');
+$sql = "UPDATE `value` SET `value` = :value WHERE `name`= :name";
 foreach ($_POST as $key=>$value){
 
-    $values = new \Yaurau\Models\Values();
-    $values->updateValues($key, $value);
+    $sth = $dbn->prepare($sql);
+    $sth->execute([
+        ':name' => $key,
+        ':value' => $value
+    ]);
+
 
 }

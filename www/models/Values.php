@@ -40,8 +40,8 @@ class Values extends Database
             ':value' => '"' . $value . '"'
         ]);
 
-        /*$str = '\'UPDATE `value` SET `value` = "%s" WHERE `name`= "%s" \' ';
-        echo sprintf($str, $value, $name);*/
+        $str = 'UPDATE `value` SET `value` = "%s" WHERE `name`= "%s" ';
+        echo sprintf($str, $value, $name);
     }
 
 }
