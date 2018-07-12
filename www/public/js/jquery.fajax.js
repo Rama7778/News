@@ -9,14 +9,12 @@
         return this.each(function() {
 
             $(this).on('submit', function(e) {
-
                 var $form = $(this);
                 var action = $form.attr('action');
                 var method;
                 var data;
-
-                  e.preventDefault();
-
+                e.preventDefault();
+                location.reload();
                 if ($form.attr('method') === undefined) {
                     method = 'GET';
                 } else {

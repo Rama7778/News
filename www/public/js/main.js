@@ -22,6 +22,6 @@ $(document).ready(function() {
 	    }
 	});
 
-	$('.ui.checkbox').checkbox();
+	// $('.ui.checkbox').checkbox();
 
 });
