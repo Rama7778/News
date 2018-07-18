@@ -20,7 +20,7 @@ class Tables extends Database
         );
         $this->create->setQuery('CREATE TABLE value (
             id INT(11) NOT NULL AUTO_INCREMENT,
-            name text(50), value text(50),			
+            name text(50), value text,			
             PRIMARY KEY(`id`))'
         );
         return true;

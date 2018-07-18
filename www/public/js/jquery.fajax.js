@@ -1,13 +1,9 @@
 ;(function($) {
-
     $.fn.fajax = function(options) {
-
         options = $.extend({
             resetOnSuccess: true,
         }, options);
-
         return this.each(function() {
-
             $(this).on('submit', function(e) {
                 var $form = $(this);
                 var action = $form.attr('action');
@@ -20,15 +16,12 @@
                 } else {
                     method = $form.attr('method').toUpperCase();
                 }
-
                 if (method === 'GET') {
                     data = $form.serialize();
                 } else {
                     data = new FormData(this);
                 }
-
                 var success = options.success;
-
                 $.extend(options, {
                     url: action,
                     type: method,
@@ -42,12 +35,8 @@
                         }
                     },
                 });
-
                 $.ajax(options);
             });
-
         });
-
     };
-
 })(jQuery);
