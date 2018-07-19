@@ -2,9 +2,229 @@
 {% block header %}
      {{ name }}
 {% endblock %}
-{% block navigation %}
+{% block data %}
+    <!--Header-->
+<div class="header">
+    <!--Top-Bar-->
+    <div class="top-bar">
+        <div class="container">
+            <div class="header-nav">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
 
+                        <h1><a class="navbar-brand" href="../../index.php">{{title}}</a></h1>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                        <nav class="linkEffects linkHoverEffect_12">
+                            <ul>
+                                <li><a class="active" href="../../index.php"><span>Home</span></a></li>
+                                <li><a class="scroll" href="#about"><span>About</span></a></li>
+                                <li><a class="scroll" href="#service"><span>Services</span></a></li>
+                                <li><a class="scroll" href="#gallery"><span>Gallery</span></a></li>
+                                <li><a class="scroll" href="#contact"><span>Contact</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--//Top-Bar-->
+    <!--Slider-->
+    <div class="container">
+        <div class="col-md-12">
+            <div class="slider">
+                <div class="callbacks_container">
+                    <ul class="rslides" id="slider">
+                        <li>
+                            <div class="slider-img">
+                                <img src="../../public/images/banner1.jpg" class="img-responsive" alt="{{title_images_banner1}}">
+                            </div>
+                            <div class="slider-info">
+                                <span class="italic">{{text_banner_first_1}} </span>
+                                <h4> {{title_banner_first_1}}</h4>
+                                <h3>{{title_banner_second_1}}</h3>
+                                <p>{{text_banner_second_1}}</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-img">
+                                <img src="../../public/images/banner2.jpg" class="img-responsive" alt="{{title_images_banner2}}">
+                            </div>
+                            <div class="slider-info">
+                                <span class="italic">{{text_banner_first_2}} </span>
+                                <h4> {{title_banner_first_2}}</h4>
+                                <h3>{{title_banner_second_2}}</h3>
+                                <p>{{text_banner_second_2}}</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slider-img">
+                                <img src="../../public/images/banner3.jpg" class="img-responsive" alt="{{title_images_banner3}}">
+                            </div>
+                            <div class="slider-info">
+                                <span class="italic">{{text_banner_first_3}} </span>
+                                <h4> {{title_banner_first_3}}</h4>
+                                <h3>{{title_banner_second_3}}</h3>
+                                <p>{{text_banner_second_3}}</p>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <!--//Slider-->
+    </div>
+    <!--//Header-->
+    <!--about-->
+    <div class="offer-w3layouts" id="about">
+        <div class="container">
+            <div class="offer-header-agile">
+                <h3 class="tittle">{{what_we}} <span>{{offer}}</span></h3>
+                <p>{{we_offer_our_customers}}</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 offer-grid ">
+                    <div class="icon">
+                        <i class="fa fa-tags" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{icon_title_offer_1}}</h4>
+                    <p>{{icon_text_offer_1}}</p>
+                </div>
+                <div class="col-md-4 offer-grid ">
+                    <div class="icon">
+                        <i class="fa fa-map-o" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{icon_title_offer_2}}</h4>
+                    <p>{{icon_text_offer_2}}</p>
+                </div>
+                <div class="col-md-4 offer-grid ">
+                    <div class="icon">
+                        <i class="fa fa-university" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{icon_title_offer_3}}</h4>
+                    <p>{{icon_text_offer_3}}</p>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!--//about-->
+    <!--service-->
+    <div class="offer-w3layouts" id="service">
+        <div class="container">
+            <div class="offer-header-agile">
+                <h3 class="tittle">{{our_service}}</h3>
+                <p>{{we_offer_our_service}}</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 offer-grid ">
+                    <div class="icon">
+                        <i class="fa fa-tags" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{icon_title_service_1}}</h4>
+                    <p>{{icon_text_service_1}}</p>
+
+                </div>
+                <div class="col-md-3 offer-grid ">
+                    <div class="icon">
+                        <i class="fa fa-map-o" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{icon_title_service_2}}</h4>
+                    <p>{{icon_text_service_2}}</p>
+                </div>
+                <div class="col-md-3 offer-grid ">
+                    <div class="icon">
+                        <i class="fa fa-university" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{icon_title_service_3}}</h4>
+                    <p>{{icon_text_service_3}}</p>
+                </div>
+                <div class="col-md-3 offer-grid ">
+                    <div class="icon">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                    </div>
+                    <h4>{{icon_title_service_4}}</h4>
+                    <p>{{icon_text_service_4}}</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+
+        </div>
+    </div>
+    <hr>
+    <!--//service-->
+    <!--/gallery-->
+    <div class="gallery" id="gallery">
+        <div class="container">
+            <!--script-->
+            <script type="text/javascript" src="../../public/js/jquery.hoverdir.js"></script>
+            <script type="text/javascript">
+                $(function() {
+
+                    $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+                });
+            </script>
+            <!--script-->
+            <h3 class="tittle">{{projects}}</span></h3>
+            <div class="gallery-grids">
+                <section>
+                    <ul id="da-thumbs" class="da-thumbs">
+                        <li>
+                            <a href="../../public/images/gallery1.jpg" class="b-link-stripe b-animate-go  thickbox">
+                                <img src="../../public/images/gallery1.jpg" alt="" />
+                                <div>
+                                    <h5><span>{{title}}</span></h5>
+                                    <p>{{text_projects}}</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../public/images/gallery2.jpg" class="b-link-stripe b-animate-go  thickbox">
+                                <img src="../../public/images/gallery2.jpg" alt="" />
+                                <div>
+                                    <h5><span>{{title}}</span></h5>
+                                    <p>{{text_projects}}</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../public/images/gallery3.jpg" class="b-link-stripe b-animate-go  thickbox">
+                                <img src="../../public/images/gallery3.jpg" alt="" />
+                                <div>
+                                    <h5><span>{{title}}</span></h5>
+                                    <p>{{text_projects}}</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--//gallery-->
+    <!--map-->
+    <hr>
+    <h3 class="tittle"><span>MAP</span></h3>
+    <div class="container">
+        <div align="center" >
+            {{ map|raw }}
+        </div>
+    </div>
+    <hr>
+    <!--//map-->
 {% endblock %}
+{% block navigation %}{% endblock %}
 {% block footer %}
     Created by {{ creater }}
 {% endblock %}
