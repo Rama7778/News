@@ -15,65 +15,13 @@
     <link href="//fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     <!--//fonts-->
     <!-- js -->
-    <script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="../../public/js/jquery.js"></script>
-    <!--light-box-files -->
-    <script src="../../public/js/modernizr.custom.js"></script>
-    {#<script src="../../public/js/jquery.chocolat.js"></script>#}
-    <link rel="stylesheet" href="../../public/css/chocolat.css" type="text/css" media="screen">
-    <!--//light-box-files -->
-    <script type="text/javascript">
-        $(function() {
-            $('.gallery a').Chocolat();
-        });
-    </script>
     <!-- //js -->
-    <script src="../../public/js/responsiveslides.min.js"></script>
-    <script>
-        $(function () {
-            $("#slider").responsiveSlides({
-                auto: true,
-                pager: true,
-                nav: true,
-                speed: 1000,
-                namespace: "callbacks",
-                before: function () {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function () {
-                    $('.events').append("<li>after event fired.</li>");
-                }
-            });
-        });
-    </script>
-    <!-- start-smoth-scrolling -->
-    <script type="text/javascript" src="../../public/js/move-top.js"></script>
-    <script type="text/javascript" src="../../public/js/easing.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-            });
-        });
-    </script>
-    <!-- start-smoth-scrolling -->
+
 </head>
 <body>
 {% block data %}{% endblock %}
-    <!--contact-->
-    <div class="contact-w3-agileits" id="contact">
-        <div class="container" >
-            <h3 class="tittle"><span>contact</span></h3>
-            <form action="#" method="post">
-                <input type="text" name="Name" placeholder="Name*" required="" />
-                <input type="email" name="Email" placeholder="Email*" required="" />
-                <textarea name="Comments" placeholder="Message" required=""></textarea>
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
-    </div>
-    <!--/contact -->
+
     <!--footer-->
 
     <div class="footer">
@@ -117,14 +65,12 @@
 <!-- smooth scrolling -->
 <script type="text/javascript">
     $(document).ready(function() {
-        /*
          var defaults = {
          containerID: 'toTop', // fading element id
          containerHoverID: 'toTopHover', // fading element hover id
          scrollSpeed: 1200,
          easingType: 'linear'
          };
-         */
         $().UItoTop({ easingType: 'easeOutQuart' });
     });
 </script>
