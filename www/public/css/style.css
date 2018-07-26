@@ -121,6 +121,14 @@
 }
 /*--//gallery--*/
 /*--offer-section--*/
+.gray-background {
+    background-color: #cdd4da;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+
 hr {
     display: block;
     height: 1px;
