@@ -21,7 +21,5 @@ $(document).ready(function() {
 	    	$('.message p').text('When sending a request, the server generated an error :(');
 	    }
 	});
-
 	// $('.ui.checkbox').checkbox();
-
 });

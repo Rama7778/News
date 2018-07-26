@@ -8,75 +8,64 @@
     <!-- //for-mobile-apps -->
     <link href="../../public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../../public/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../public/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <!--fonts-->
     <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
     <!--//fonts-->
-    <!-- js -->
-    <script type="text/javascript" src="../../public/js/jquery.js"></script>
-    <!-- //js -->
-
 </head>
 <body>
-{% block data %}{% endblock %}
-
+    <!--Top-Bar-->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg  ">
+        <a class="navbar-brand" href="../../index.php">{{title}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex" >
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../index.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#service">Services<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#gallery">Gallery<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#contacts">Contacts<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--//Top-Bar-->
+    {% block data %}{% endblock %}
+    <br>
     <!--footer-->
-
-    <div class="footer">
-        <div class="footer-head-agile">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <span class="fa-icon-w3"><i class="fa fa-phone" aria-hidden="true"></i></span>CALL NOW : {{telefon}}
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-icon-w3"><i class="fa fa-envelope" aria-hidden="true"></i></span>MAIL : <a href="mailto:info@example.com">{{mail}}</a>
-                    </div>
-                </div>
-
-
-            </div>
+    <div class="footer" >
+        <div class="aboutus-right-wthree">
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+            </ul>
         </div>
-
-        <div class="container">
-            <div class="aboutus-right-wthree">
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="clearfix"> </div>
         <div class="copy">
-            <p>© {{year}} <a href="https://github.com/yaurau/yaurau-framework">Yaurau framework</a> . All Rights Reserved</p>
+            <p>© {{year}} <a href="https://github.com/yaurau/yaurau-framework">Yaurau framework</a> . All Rights Reserved
+            </p>
         </div>
-
     </div>
-</div>
-<!--/footer -->
-<!-- smooth scrolling -->
-<script type="text/javascript">
-    $(document).ready(function() {
-         var defaults = {
-         containerID: 'toTop', // fading element id
-         containerHoverID: 'toTopHover', // fading element hover id
-         scrollSpeed: 1200,
-         easingType: 'linear'
-         };
-        $().UItoTop({ easingType: 'easeOutQuart' });
-    });
-</script>
-<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-<!-- //smooth scrolling -->
-<script type="text/javascript" src="../../public/js/bootstrap.min.js"></script>
-
+    <!--/footer -->
+    <!-- js -->
+    <script src="../../public/js/jquery.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <script src="../../public/js/yaurau.js"></script>
+    <!-- //js -->
 </body>
 </html>

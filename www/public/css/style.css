@@ -218,34 +218,6 @@ h3.tittle span{
     padding-top: 30px;
     padding-bottom: 35px;
 }
-.footer-content-agile {
-    padding-top: 30px;
-    color: #7D7C7C;
-}
-.footer-head-agile {
-    padding: 0px 0px 20px;
-    width: 74%;
-    margin: 0 auto;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-.footer-head-agile ul li{
-	display:inline-block;
-}
-span.fa-icon-w3 i {
-    font-size: 20px;
-    margin-right: 9px;
-}
-.footer-head-agile .mail a{
-	color:#1a5e71;
-	text-decoration:none;
-}
-.footer-content-agile h4 {
-    font-size: 20px;
-    margin: 16px 0px;
-	color:#ffffff;
-    text-transform: uppercase;
-}
 .logo-w3ls h2 a {
     font-size: 19px;
     padding: 5px 10px;
@@ -297,71 +269,9 @@ label {
     padding-left: 12px;
     padding-top: 9px;
 }
- .aboutus-right-wthree i.fa.fa-google-plus {
-    padding-left: 9px;
-}
-.news-letter-agileits-w3layouts p {
-    font-size: 14px;
-}
-.news-letter-agileits-w3layouts form {
-    margin: 0px;
-}
-.news-letter-agileits-w3layouts input[type="email"] {
-    background: transparent;
-    border: 1px solid #fff;
-    color: #ddd;
-    width: 100%;
-   margin: 0px;
-    margin-top: 20px;
-}
-.news-letter-agileits-w3layouts input[type="submit"] {
-    float: left;
-    font-size: 18px;
-    color: #fff;
-	background:rgba(26, 94, 113, 0.83);
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -o-border-radius: 6px;
-    -ms-border-radius: 6px;
-    border-radius: 6px;
-	transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-.news-letter-agileits-w3layouts input[type="submit"]:hover{
-	background:#b56d10;
-	transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-.aboutus-right-wthree p {
-    font-size: 14px;
-    line-height: 1.8em;
-}
-.footer-grid1-left {
-    float: left;
-    width: 35%;
-}
-.footer-grid1-right {
-    float: right;
-    width: 60%;
-}
-.footer-grid1 {
-    margin-bottom: 15px;
-}
-.footer-grid1-right a {
-    color: #7D7C7C;
-	font-size:14px;
-}
-.footer-grid1-right span {
-    color: rgba(26, 94, 113, 0.83);
-    font-size: 12px;
-	text-transform: capitalize;
-}
+
+
+
 /*--copy-right--*/
 .copy {
     text-align: center;
