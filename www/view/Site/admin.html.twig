@@ -1,5 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block data %}
+    <!--Top-Bar-->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg  ">
+        <a class="navbar-brand" href="../../index.php">{{title}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex" >
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../index.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--//Top-Bar-->
     <div class="container">
         <br>
         <h2>Основные настройки</h2>
@@ -10,6 +25,54 @@
                 <input type="text" class="form-control" name="title"  value="{{ title }}">
             </div>
             <h6>Слайдер</h6>
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="../../public/img/banner1.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="../../public/img/banner2.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top" src="../../public/img/banner3.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="form-row alert alert-secondary">
                 <div class="form-group col-md-4">
                     <label>Заголовок первой картинки</label>
