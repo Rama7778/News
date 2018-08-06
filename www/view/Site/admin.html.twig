@@ -25,82 +25,7 @@
                 <input type="text" class="form-control" name="title"  value="{{ title }}">
             </div>
             <h6>Слайдер</h6>
-            <div class="album py-5 bg-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../../public/img/banner1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                                <a  data-fancybox="gallery" href="../../public/img/gallery3.jpg" class="gray b-link-stripe b-animate-go  thickbox">View</a>
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../../public/img/banner2.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <img class="card-img-top" src="../../public/img/banner3.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row alert alert-secondary">
-                <div class="form-group col-md-4">
-                    <label>Заголовок первой картинки</label>
-                    <input type="text" class="form-control" name=" title_banner_second_1" value="{{ title_banner_second_1 }}">
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Заголовок второй картинки</label>
-                    <input type="text" class="form-control" name=" title_banner_second_2" value="{{ title_banner_second_2 }}">
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Заголовок третьей картинки</label>
-                    <input type="text" class="form-control" name=" title_banner_second_3" value="{{ title_banner_second_3 }}">
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Текст на первой картинке</label>
-                    <input type="text" class="form-control" name=" text_banner_second_1" value="{{ text_banner_second_1 }}">
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Текст на второй картинке</label>
-                    <input type="text" class="form-control" name=" title_banner_second_2" value="{{ title_banner_second_2 }}">
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Текст на третьей картинке</label>
-                    <input type="text" class="form-control" name=" title_banner_second_3" value="{{ title_banner_second_3 }}">
-                </div>
-            </div>
+            {% block slider %} {% endblock %}
             <br>
             <h6>Первый раздел</h6>
             <div class="form-row alert alert-secondary">
@@ -210,4 +135,8 @@
 {% block javascript %}
     <script src="../../public/js/jquery.fajax.js"></script>
     <script src="../../public/js/main.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="../../public/js/slider-script.js"></script>
+
+
 {% endblock %}
