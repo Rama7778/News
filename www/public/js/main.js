@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	$('form').fajax({
+	$('.forms').fajax({
 		beforeSend: function(){
 			$('.form').addClass('loading');
 			$('.message,.form').removeClass('error success');
@@ -21,5 +21,5 @@ $(document).ready(function() {
 	    	$('.message p').text('When sending a request, the server generated an error :(');
 	    }
 	});
-	// $('.ui.checkbox').checkbox();
+	 $('.ui.checkbox').checkbox();
 });
