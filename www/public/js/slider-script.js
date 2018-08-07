@@ -21,6 +21,7 @@ $(function(){
 	 			// show the image after success
 	 	}
 	 });
+
     $('#myForm_2').ajaxForm({
         beforeSend:function(){
             $(".progress_2").show();
@@ -41,6 +42,7 @@ $(function(){
             // show the image after success
         }
     });
+
     $('#myForm_3').ajaxForm({
         beforeSend:function(){
             $(".progress_3").show();
@@ -63,10 +65,16 @@ $(function(){
     });
 	 //set the progress bar to be hidden on loading
 	 $(".progress_1").hide();
+	 $(".progress_2").hide();
+	 $(".progress_3").hide();
 });
 
 $('document').ready(function(){
-	$('.form-zayavka_1, .form-zayavka_2, .form-zayavka_3').hide();
+	$(".form-zayavka_1").hide();
+	$(".form-zayavka_2").hide();
+	$(".form-zayavka_3").hide();
+
+
 	$('.buttons_1').on('click', function(){
 		$('.form-zayavka_1').show();
 	});
