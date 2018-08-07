@@ -11,6 +11,7 @@
                 var data;
                 e.preventDefault();
                 location.reload();
+
                 if ($form.attr('method') === undefined) {
                     method = 'GET';
                 } else {

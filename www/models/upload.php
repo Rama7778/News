@@ -1,10 +1,4 @@
 <?php
-/** APP: Ajax Image uploader with progress bar
-    Website:packetcode.com
-    Author: Krishna TEja G S
-    Date: 29th April 2014
-***/
-
 // an array of allowed extensions
 $allowedExts = ["gif", "jpeg", "jpg", "png","GIF","JPEG","JPG","PNG"];
 $temp = explode(".", $_FILES["file"]["name"]);
@@ -23,9 +17,9 @@ if ((($_FILES["file"]["type"] == "image/gif")
   if ($_FILES["file"]["error"] > 0) {
     echo "0";
   } else {
-    $target = __DIR__ ."/../public/img";
+    $target = __DIR__ . "/../public/img/";
     move_uploaded_file($_FILES["file"]["tmp_name"], $target. $_FILES["file"]["name"]);
-    echo  __DIR__ ."/../public/img" . $_FILES["file"]["name"];
+    echo  "../../public/img/" . $_FILES["file"]["name"];
   }
 } else {
   echo "0";
