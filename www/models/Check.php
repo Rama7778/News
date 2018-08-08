@@ -1,4 +1,5 @@
 <?php
+
 namespace Yaurau\Models;
 
 class Check extends Database

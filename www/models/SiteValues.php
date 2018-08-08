@@ -1,4 +1,10 @@
 <?php
+/**
+ *  @author   Rauvtovich Yauhen
+ *  @copyright 2018
+ *  @license   GPL-2.0+
+ */
+
 namespace Yaurau\Models;
 
 class SiteValues
@@ -7,6 +13,9 @@ class SiteValues
     {
         $array = [
             'title' => 'Yaurau Framework',
+            'banner_1'=> 'baner1.jpg',
+            'banner_2'=> 'baner2.jpg',
+            'banner_3'=> 'baner3.jpg',
             'what_we' => 'what we',
             'we_offer_our_customers' => 'we offer our customers',
             'our_service' => 'Our service',
@@ -42,9 +51,14 @@ class SiteValues
             $val->setValues($key, $value);
         }
     }
+
+    /**
+     * @return array
+     */
     static public function addValues()
     {
         $val = new Values();
         return $val->getBaseValues();
     }
+
 }

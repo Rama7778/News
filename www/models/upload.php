@@ -24,3 +24,6 @@ if ((($_FILES["file"]["type"] == "image/gif")
 } else {
   echo "0";
 }
+/**
+ * @author Yaugen
+ */

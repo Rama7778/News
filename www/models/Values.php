@@ -1,18 +1,38 @@
 <?php
+/**
+ *  @author   Rauvtovich Yauhen
+ *  @copyright 2018
+ *  @license   GPL-2.0+
+ */
+
 namespace Yaurau\Models;
 
 use Yaurau\Models\Database;
 
+/**
+ * Class Values
+ * @package Yaurau\Models
+ */
 class Values extends Database
 {
+    /**
+     * @var \Yaurau\Models\Database
+     */
     public $connect;
 
+    /**
+     * Values constructor.
+     */
     public function __construct()
     {
         parent::__construct();
         $this->connect = new Database();
     }
 
+    /**
+     * @param $name
+     * @param $value
+     */
     public function setValues($name, $value)
     {
         $this->connect->setPreparedQuery('INSERT INTO `value`(`name`, `value`) VALUES (:name, :value)' , [
@@ -21,6 +41,9 @@ class Values extends Database
         ]);
     }
 
+    /**
+     * @return array
+     */
     public function getBaseValues()
     {
        return  $this->connect->getValues('SELECT `name`, `value` FROM value');
@@ -33,15 +56,17 @@ class Values extends Database
             ':password' => htmlentities($_POST['new_password'])
         ]);
     }
+
+    /**
+     * @param $name
+     * @param $value
+     */
     public function updateValues($name, $value)
     {
         $this->connect->setPreparedQuery('UPDATE `value` SET `value` = :value WHERE `name`= :name' , [
             ':name' => '"'. $name .'"',
             ':value' => '"' . $value . '"'
         ]);
-
-        $str = 'UPDATE `value` SET `value` = "%s" WHERE `name`= "%s" ';
-        echo sprintf($str, $value, $name);
     }
 
 }

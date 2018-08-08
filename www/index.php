@@ -1,4 +1,10 @@
 <?php
+/**
+ *  @author   Rauvtovich Yauhen
+ *  @copyright 2018
+ *  @license   GPL-2.0+
+ */
+
 require_once __DIR__ . '/autoload.php';
 use Yaurau\Controllers\{SiteController, AdminController, CreateController};
 use Yaurau\Models\{ Check};
