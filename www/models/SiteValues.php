@@ -13,9 +13,9 @@ class SiteValues
     {
         $array = [
             'title' => 'Yaurau Framework',
-            'banner_1'=> 'baner1.jpg',
-            'banner_2'=> 'baner2.jpg',
-            'banner_3'=> 'baner3.jpg',
+            'banner_1'=> 'banner1.jpg',
+            'banner_2'=> 'banner2.jpg',
+            'banner_3'=> 'banner3.jpg',
             'what_we' => 'what we',
             'we_offer_our_customers' => 'we offer our customers',
             'our_service' => 'Our service',
