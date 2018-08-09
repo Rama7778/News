@@ -1,5 +1,11 @@
 <?php
-require_once __DIR__ . '/../../autoload.php';
+/**
+ *  @author   Rauvtovich Yauhen
+ *  @copyright 2018
+ *  @license   GPL-2.0+
+ */
+
+require_once __DIR__ . '/../autoload.php';
 
 $dsn = 'mysql:dbname=' . DB_NAME .'; host='. DB_HOST ;
 $dbn = new PDO($dsn, DB_USER, DB_PASSWORD);

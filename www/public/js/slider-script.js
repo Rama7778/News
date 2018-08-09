@@ -6,7 +6,7 @@ $(function(){
 	 		 $(".progress_1").show();
 	 	},
 	 	uploadProgress:function(event,position,total,percentComplete){
-	 		$(".progress-bar-galery_1").width(percentComplete+'%'); //dynamicaly change the progress bar width
+	 		$(".progress-bar-slider_1").width(percentComplete+'%'); //dynamicaly change the progress bar width
 	 		$(".sr-only_1").html(percentComplete+'%'); // show the percentage number
 	 	},
 	 	success:function(){
@@ -27,7 +27,7 @@ $(function(){
             $(".progress_2").show();
         },
         uploadProgress:function(event,position,total,percentComplete){
-            $(".progress-bar-galery_2").width(percentComplete+'%'); //dynamicaly change the progress bar width
+            $(".progress-bar-slider_2").width(percentComplete+'%'); //dynamicaly change the progress bar width
             $(".sr-only_2").html(percentComplete+'%'); // show the percentage number
         },
         success:function(){
@@ -48,7 +48,7 @@ $(function(){
             $(".progress_3").show();
         },
         uploadProgress:function(event,position,total,percentComplete){
-            $(".progress-bar_3").width(percentComplete+'%'); //dynamicaly change the progress bar width
+            $(".progress-bar-slider_3").width(percentComplete+'%'); //dynamicaly change the progress bar width
             $(".sr-only_3").html(percentComplete+'%'); // show the percentage number
         },
         success:function(){
