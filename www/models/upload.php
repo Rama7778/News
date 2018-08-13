@@ -13,6 +13,15 @@ switch($key[0]):
     case 'banner_3':
         $file = 'banner_3';
         break;
+    case 'gallery_1':
+        $file = 'gallery_1';
+        break;
+    case 'gallery_2':
+        $file = 'gallery_2';
+        break;
+    case 'gallery_3':
+        $file = 'gallery_3';
+        break;
 endswitch;
 
 $temp = explode(".", $_FILES[$file]["name"]);

@@ -1,7 +1,7 @@
 <?php
 /**
  *  @author   Rauvtovich Yauhen
- *  @copyright 2018
+ *  @copyright Y.Rauvtovich 2018
  *  @license   GPL-2.0+
  */
 

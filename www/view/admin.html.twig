@@ -19,6 +19,15 @@
         <br>
         <h2>Основные настройки</h2>
         <br>
+        <div class="gallery-grids">
+            <section>
+                <ul id="da-thumbs" class="da-thumbs">
+                    <li>
+                        <a data-fancybox="gallery" href="../public/img/{{ banner_1 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
         <form method="post" action="../models/admin-ajax.php" class="forms">
             <div class="form-group">
                 <label><h6>Название сайта</h6></label>
@@ -38,11 +47,18 @@
                                     <img class="card-img-top" src="../../public/img/{{ banner_1 }}">
                                 </div>
                                 <div class="card-body">
-
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-sm btn-outline-secondary">
-                                                <a data-fancybox="gallery" href="../public/img/{{ banner_1 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
+                                                <div class="gallery-grids">
+                                                    <section>
+                                                        <ul id="da-thumbs" class="da-thumbs">
+                                                            <li>
+                                                                <a data-fancybox="gallery" href="../public/img/{{ banner_1 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
+                                                            </li>
+                                                        </ul>
+                                                    </section>
+                                                </div>
                                             </button>
                                             <button type="button" class=" buttons_1 btn btn-sm btn-outline-secondary">Edit</button>
                                         </div>
@@ -246,105 +262,107 @@
             <br>
             <button class="btn btn-primary" type="submit" id="demo">Send form</button>
         </form>
-        <form method="post" action="../models/admin-ajax.php" class="forms">
-            <br>
-            <h6>Галерея</h6>
-            <br>
-            <div class="album py-5 bg-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <div class="gallery_image_1 card-img-top">
-                                    <img class="card-img-top" src="../../public/img/{{ banner_1 }}">
-                                </div>
-                                <div class="card-body">
-
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                                <a data-fancybox="gallery" href="../public/img/{{ banner_1 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
-                                            </button>
-                                            <button type="button" class=" gallery_buttons_1 btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
+        <br>
+    </div>
+    <div class="container">
+        <h6>Галерея</h6>
+        <br>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <div class="image_4 card-img-top">
+                                <img class="card-img-top" src="../../public/img/{{ gallery_1 }}">
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <a data-fancybox="gallery" href="../public/img/{{ gallery_1 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
+                                        </button>
+                                        <button type="button" class=" buttons_4 btn btn-sm btn-outline-secondary">Edit</button>
                                     </div>
-                                    <div class="submit_1">
-                                        <form class="gallery_form-zayavka_1" action="../models/upload.php" method="post" id="myForm_1"
-                                              enctype="multipart/form-data">
-                                            <hr>
-                                            <label>PNG, JPG, or GIF (1024K max file size)</label>
-                                            <input type="file" name="banner_1" id="file">
-                                            <hr>
-                                            <input type="submit" name="submit" class="btn btn-success" value="Upload Image">
-                                        </form>
-                                        <div class="gallery_progress_1 progress-striped active">
-                                            <div class="progress-bar-galery_2 progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                                 aria-valuemax="100" style="width: 0%">
-                                                <span class="gallery_sr-only_2">0% Complete</span>
-                                            </div>
+                                </div>
+                                <div class="submit_4">
+                                    <form class="form-zayavka_4" action="../models/upload.php" method="post" id="myForm_4"
+                                          enctype="multipart/form-data">
+                                        <hr>
+                                        <label>PNG, JPG, or GIF (1024K max file size)</label>
+                                        <input type="file" name="gallery_1" id="file">
+                                        <hr>
+                                        <input type="submit" name="submit" class="btn btn-success" value="Upload Image">
+                                    </form>
+                                    <div class="progress_4 progress-striped active">
+                                        <div class="progress-bar-galery_1 progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                             aria-valuemax="100" style="width: 0%">
+                                            <span class="sr-only_4">0% Complete</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <div class="image_2 card-img-top"><img class="card-img-top" src="../../public/img/{{ banner_2 }}"></div>
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                                <a data-fancybox="gallery" href="../public/img/{{ banner_2 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
-                                            </button>
-                                            <button type="button" class=" buttons_2 btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
-
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <div class="image_5 card-img-top">
+                                <img class="card-img-top" src="../../public/img/{{ gallery_2 }}">
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <a data-fancybox="gallery" href="../public/img/{{ gallery_2 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
+                                        </button>
+                                        <button type="button" class=" buttons_5 btn btn-sm btn-outline-secondary">Edit</button>
                                     </div>
-                                    <div class="submit_2">
-                                        <form class="form-zayavka_2" action="../models/upload.php" method="post" id="myForm_2"
-                                              enctype="multipart/form-data">
-                                            <hr>
-                                            <label>PNG, JPG, or GIF (1024K max file size)</label>
-                                            <input type="file" name="banner_2" id="file">
-                                            <hr>
-                                            <input type="submit" name="submit" class="btn btn-success" value="Upload Image">
-                                        </form>
-                                        <div class="progress_2 progress-striped active">
-                                            <div class="progress-bar-galery_2 progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                                 aria-valuemax="100" style="width: 0%">
-                                                <span class="sr-only_2">0% Complete</span>
-                                            </div>
+                                </div>
+                                <div class="submit_5">
+                                    <form class="form-zayavka_5" action="../models/upload.php" method="post" id="myForm_5"
+                                          enctype="multipart/form-data">
+                                        <hr>
+                                        <label>PNG, JPG, or GIF (1024K max file size)</label>
+                                        <input type="file" name="gallery_2" id="file">
+                                        <hr>
+                                        <input type="submit" name="submit" class="btn btn-success" value="Upload Image">
+                                    </form>
+                                    <div class="progress_5 progress-striped active">
+                                        <div class="progress-bar-galery_2 progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                             aria-valuemax="100" style="width: 0%">
+                                            <span class="sr-only_5">0% Complete</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4 box-shadow">
-                                <div class="image_3 card-img-top"><img class="card-img-top" src="../../public/img/{{ banner_3 }}"></div>
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                                <a data-fancybox="gallery" href="../public/img/{{ banner_3 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
-                                            </button>
-                                            <button type="button" class=" buttons_3 btn btn-sm btn-outline-secondary">Edit</button>
-                                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <div class="image_6 card-img-top">
+                                <img class="card-img-top" src="../../public/img/{{ gallery_3 }}">
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                                            <a data-fancybox="gallery" href="../public/img/{{ gallery_3 }}" class="gray b-link-stripe b-animate-go  thickbox">View</a>
+                                        </button>
+                                        <button type="button" class=" buttons_6 btn btn-sm btn-outline-secondary">Edit</button>
                                     </div>
-                                    <div class="submit_3">
-                                        <form class="form-zayavka_3" action="../models/upload.php" method="post" id="myForm_3"
-                                              enctype="multipart/form-data">
-                                            <hr>
-                                            <label>PNG, JPG, or GIF (1024K max file size)</label>
-                                            <input type="file" name="banner_3" id="file">
-                                            <hr>
-                                            <input type="submit" name="submit" class="btn btn-success" value="Upload Image">
-                                        </form>
-                                        <div class="progress_3 progress-striped active">
-                                            <div class="progress-bar-galery_3 progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                                                 aria-valuemax="100" style="width: 0%">
-                                                <span class="sr-only_3">0% Complete</span>
-                                            </div>
+                                </div>
+                                <div class="submit_6">
+                                    <form class="form-zayavka_6" action="../models/upload.php" method="post" id="myForm_6"
+                                          enctype="multipart/form-data">
+                                        <hr>
+                                        <label>PNG, JPG, or GIF (1024K max file size)</label>
+                                        <input type="file" name="gallery_3" id="file">
+                                        <hr>
+                                        <input type="submit" name="submit" class="btn btn-success" value="Upload Image">
+                                    </form>
+                                    <div class="progress_6 progress-striped active">
+                                        <div class="progress-bar-galery_3 progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                             aria-valuemax="100" style="width: 0%">
+                                            <span class="sr-only_6">0% Complete</span>
                                         </div>
                                     </div>
                                 </div>
@@ -353,6 +371,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <br>
+        <form method="post" action="../models/admin-ajax.php" class="forms">
             <div class="form-row alert alert-secondary">
                 <div class="form-group col-md-6">
                     <label>Название галереи</label>
