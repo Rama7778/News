@@ -11,17 +11,21 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+
+                <li class="nav-item active">
                     <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link disabled" href="#service">Services<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#gallery">Gallery<span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                    <a class="nav-link disabled" href="#gallerys">Gallery<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link disabled" href="#contacts">Contacts<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <div class="nav-link disabled" href="#contacts"><i class="fa fa-phone" aria-hidden="true"></i>{{telefon}}<span class="sr-only"></span></div>
                 </li>
             </ul>
         </div>
@@ -72,32 +76,15 @@
         <div class="container">
             <div class="offer-header-agile">
                 <h3 class="tittle">{{what_we}} <span>{{offer}}</span></h3>
-                <p>{{we_offer_our_customers}}</p>
             </div>
-            <div class="row">
-                <div class="col-md-4 offer-grid ">
-                    <div class="icon">
-                        <i class="fa fa-tags" aria-hidden="true"></i>
-                    </div>
-                    <h4>{{icon_title_offer_1}}</h4>
-                    <p>{{icon_text_offer_1}}</p>
-                </div>
-                <div class="col-md-4 offer-grid ">
-                    <div class="icon">
-                        <i class="fas fa-chart-bar" aria-hidden="true"></i>
-                    </div>
-                    <h4>{{icon_title_offer_2}}</h4>
-                    <p>{{icon_text_offer_2}}</p>
-                </div>
-                <div class="col-md-4 offer-grid ">
-                    <div class="icon">
-                        <i class="fa fa-university" aria-hidden="true"></i>
-                    </div>
-                    <h4>{{icon_title_offer_3}}</h4>
-                    <p>{{icon_text_offer_3}}</p>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+           <div class="row">
+               <div class="col-md-12 offer-grid ">
+                   <p>{{we_offer_our_customers}}</p>
+                   <button type="button" class="btn btn-sm btn-outline-secondary">
+                       <a data-fancybox  href="#contacts" class="gray b-link-stripe b-animate-go  thickbox">Contacts</a>
+                   </button>
+               </div>
+           </div>
         </div>
     </div>
     <!--//about-->
@@ -144,10 +131,10 @@
     <br>
     <!--//service-->
     <!--/gallery-->
-    <div class="container" id="gallery">
+    <div class="container" id="gallerys">
         <h3 class="tittle">{{projects}}</h3>
         <div class="row">
-            <div class="gallery-grids">
+            <div class="gallery-grids" >
                 <section>
                     <ul id="da-thumbs" class="da-thumbs">
                         <li>
