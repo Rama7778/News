@@ -1,6 +1,7 @@
 <?php
 namespace Yaurau\Controllers;
-use Yaurau\Models\SiteValues;
+
+use Yaurau\Models\{SiteValues, View};
 
 class SiteController {
     public static function viewSite()
@@ -14,7 +15,7 @@ class SiteController {
                 $array = array_combine($arrayName, $arrayValue);
             }
             $path = 'index.html.twig';
-            include_once __DIR__ . '/../view/ViewSite.php';
+            View::getView($path, $array);
 
     }
 }

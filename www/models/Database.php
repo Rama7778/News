@@ -11,19 +11,23 @@ class Database
     public function __construct()
     {
         try {
-        $dsn = 'mysql:dbname=yaurau; host=localhost';
-        $this->dbn = new PDO($dsn, 'root', '');
-        $this->dbn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+            $dsn = 'mysql:dbname=' . DB_NAME .'; host='. DB_HOST ;
+            $this->dbn = new PDO($dsn, DB_USER, DB_PASSWORD);
+            $this->dbn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
         }
          catch(PDOException $e) {
                 $mess = $e->getMessage() . ' Time ' . getdate()['hours'] . ':' . getdate()['minutes']  .
              ' Date ' . getdate()['mday'].'.' . getdate()['month'] . '.' . getdate()['year'] . '///';
-                echo time() . $e->getFile();
-                View::display('error403.php');
+             $array['error'] = "Код исключения: " . $e->getCode();
+             View::getView('error404.html.twig', $array);
                 LogFiles::putContents($mess);
-                file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);
          }
     }
+
+    function __wakeup() { }
+
+    function __clone() { }
+
     public function getAll ($sql, $parameter = [])
     {
         $sth = $this->dbn->prepare($sql);

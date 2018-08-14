@@ -1,6 +1,9 @@
 <?php
 namespace Yaurau\Controllers;
+
 require_once __DIR__ .'/../autoload.php';
+
+use Yaurau\Models\View;
 
 class CreateController
 {
@@ -17,7 +20,7 @@ class CreateController
             'service' => 'service',
             'Projects' => 'Projects'
         ];
-        include_once __DIR__ . '/../view/ViewSite.php';
+        View::getView($path, $array);
 
     }
 }
