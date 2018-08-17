@@ -8,7 +8,7 @@
 namespace Yaurau\Controllers;
 require_once __DIR__ .'/../autoload.php';
 use Yaurau\Models\{
-    Check, SiteValues, View, Database
+    Check, SiteValues, View, LogFiles
 };
 
 class AdminController
@@ -19,17 +19,13 @@ class AdminController
         if ($check->authorizationForm()) {
             self::getAdminPanel();
         } else {
+
             $path = 'login.html.twig';
             $array = [
-                'name' => 'Yaurau Framework',
-                'creater' => 'Yaurau Framework',
                 'title' => 'Yaurau Framework',
-                'what_we' => 'what we',
-                'we_offer_our_customers' => 'we offer our customers',
-                'Our' => 'Our',
-                'service' => 'service',
-                'Projects' => 'Projects'
             ];
+            $mess = 'Attempted access: ' . $_SERVER['REMOTE_ADDR'].'(IP) - '.date(DATE_RFC822) . '///';
+            LogFiles::putContents($mess);
             View::getView($path, $array);
         }
     }

@@ -16,6 +16,23 @@ use Yaurau\Models\Database;
 class Values extends Database
 {
     /**
+     * @var string
+     */
+    static $insertNameValue = 'INSERT INTO `value`(`name`, `value`) VALUES (:name, :value)';
+    /**
+     * @var string
+     */
+    static $selectNameValue = 'SELECT `name`, `value` FROM value';
+    /**
+     * @var string
+     */
+    static $insertEmailPassword = 'INSERT INTO `login`(`email`, `password`) VALUES (:email, :password)';
+    /**
+     * @var string
+     */
+    static $updateValue = 'UPDATE `value` SET `value` = :value WHERE `name`= :name';
+
+    /**
      * @var \Yaurau\Models\Database
      */
     public $connect;
@@ -35,7 +52,7 @@ class Values extends Database
      */
     public function setValues($name, $value)
     {
-        $this->connect->setPreparedQuery('INSERT INTO `value`(`name`, `value`) VALUES (:name, :value)' , [
+        $this->connect->setPreparedQuery( self::$insertNameValue, [
             ':name' => $name,
             ':value' => $value
         ]);
@@ -46,12 +63,12 @@ class Values extends Database
      */
     public function getBaseValues()
     {
-       return  $this->connect->getValues('SELECT `name`, `value` FROM value');
+       return  $this->connect->getValues(self::$selectNameValue);
     }
 
     public function insert()
     {
-        $this->connect->setPreparedQuery('INSERT INTO `login`(`email`, `password`) VALUES (:email, :password)', [
+        $this->connect->setPreparedQuery(self::$insertEmailPassword, [
             ':email' => htmlentities($_POST['new_email']),
             ':password' => htmlentities($_POST['new_password'])
         ]);
@@ -63,7 +80,7 @@ class Values extends Database
      */
     public function updateValues($name, $value)
     {
-        $this->connect->setPreparedQuery('UPDATE `value` SET `value` = :value WHERE `name`= :name' , [
+        $this->connect->setPreparedQuery(self::$updateValue , [
             ':name' => '"'. $name .'"',
             ':value' => '"' . $value . '"'
         ]);
