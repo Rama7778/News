@@ -6,7 +6,7 @@
  */
 
 define('DB_NAME', 'yaurau');
-define('DB_USER', 'r-oot');
+define('DB_USER', 'root');
 define('DB_HOST', 'localhost');
 define('DB_PASSWORD', '');
 
