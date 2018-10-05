@@ -4,7 +4,7 @@ Developer: Rauvtovich Yauhen
 
 **== Description ==**
 
-Frameworks yaurau-framework is intended to quickly create sites landing.
+Framework yaurau-framework is intended to quickly create landing page.
 
 ![Image alt](https://github.com/yaurau/yaurau-framework/raw/master/www/public/img/yaurau-framework.png)
 
