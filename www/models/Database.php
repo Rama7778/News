@@ -16,11 +16,11 @@ class Database
             $this->dbn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
         }
          catch(PDOException $e) {
-                $mess = $e->getMessage() . ' Time ' . getdate()['hours'] . ':' . getdate()['minutes']  .
+             $mess = $e->getMessage() . ' Time ' . getdate()['hours'] . ':' . getdate()['minutes']  .
              ' Date ' . getdate()['mday'].'.' . getdate()['month'] . '.' . getdate()['year'] . '///';
              $array['error'] = "Код исключения: " . $e->getCode();
              View::getView('error404.html.twig', $array);
-                LogFiles::putContents($mess);
+             LogFiles::putContents($mess);
          }
     }
 
