@@ -40,19 +40,21 @@ class Database
         $sth->execute($parameter);
         return $result = $sth->fetchAll();
     }
+
     public function getValues ($sql)
     {
         $sth = $this->dbn->query($sql);
         return $result = $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
     public function setQuery ($sql)
     {
         return $this->dbn->query($sql);
     }
+
     public function setPreparedQuery ($sql, $parameter = [])
     {
         $sth = $this->dbn->prepare($sql);
         $sth->execute($parameter);
     }
-
 }

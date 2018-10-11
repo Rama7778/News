@@ -9,7 +9,8 @@ namespace Yaurau\Controllers;
 
 use Yaurau\Models\{SiteValues, View};
 
-class SiteController {
+class SiteController
+{
     public function getView()
     {
             $arrayName = [];

@@ -8,7 +8,6 @@
 require_once __DIR__ . '/autoload.php';
 
 use Yaurau\Models\ChoiceController;
-use Yaurau\Models\Tables;
 
 ChoiceController::runController();
 

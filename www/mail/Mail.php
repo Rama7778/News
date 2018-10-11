@@ -2,9 +2,10 @@
 namespace Application\classes;
 require __DIR__ . '/../autoload.php';
 //require __DIR__ . '/../../vendor/phpmailer/phpmailer/PHPMailerAutoload.php';
-class Mail {
-    static public function getMail () {
-
+class Mail
+{
+    static public function getMail ()
+    {
         $mail = new \PHPMailer;
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers

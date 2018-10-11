@@ -7,7 +7,6 @@
 
 namespace Yaurau\Models;
 
-
 class Maker
 {
     private const FILE = 'config.php';
@@ -23,6 +22,7 @@ class Maker
         ;
         file_put_contents(self::FILE, $data, FILE_APPEND );
     }
+
     public static function runCreateTable() :void
     {
         $tables= new Tables;
@@ -31,5 +31,4 @@ class Maker
         $values->insert();
         SiteValues::setBaseValues();
     }
-
 }

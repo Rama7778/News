@@ -57,5 +57,4 @@ class SiteValues
         $val = new Values();
         return $val->getBaseValues();
     }
-
 }

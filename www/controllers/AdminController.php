@@ -29,6 +29,7 @@ class AdminController
             View::getView($path, $array);
         }
     }
+
     public static function getAdminPanel()
     {
         $path = 'admin.html.twig';

@@ -48,19 +48,4 @@ class ChoiceController
             return new CreateControllerLogin;
         }
     }
-
 }
-//                }self::$controller = 'Site';
-//        p
-//            AdminController::viewAdminPanel();
-//        }
-//        elseif(Check::checkCreateDB() == true){ //Проверка наличия БД сайта
-//            SiteController::viewSite();
-//        }
-//        else {
-//            CreateController::viewCreatePanel();  //Create DB
-//
-
-//        }
-//    }
-//}
