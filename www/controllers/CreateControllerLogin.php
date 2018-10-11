@@ -7,15 +7,15 @@
 
 namespace Yaurau\Controllers;
 
-use Yaurau\Models\{View, Check};
+use Yaurau\Models\{View, Maker};
 
-class CreateController
+class CreateControllerLogin
 {
     public function getView()
     {
-        $path = 'create.html.twig';
+        $path = 'createLogin.html.twig';
         $array = ['title' => 'Yaurau Framework'];
         View::getView($path, $array);
-        Check::setFormConst();
+        Maker::runCreateTable();
     }
 }

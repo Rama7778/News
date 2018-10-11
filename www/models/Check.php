@@ -25,10 +25,22 @@ class Check extends Database
         $this->authorization = new Database();
     }
 
+    /**
+     * @return array
+     */
     public function checkCreateTablesPublic() : array
     {
         return $this->getValues('SHOW TABLES');
     }
+
+    public function authorizationForm()
+    {
+        return $this->authorization->getAll('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
+            ':email' => $_POST['email'],
+            ':password' => $_POST['password']
+        ]);
+    }
+
     /**
      * @return bool
      */
@@ -41,7 +53,6 @@ class Check extends Database
         } else {
             return false;
         }
-
     }
 
     public static function checkCreateTables()
@@ -50,22 +61,17 @@ class Check extends Database
         $obj->checkCreateTablesPublic();
     }
 
-    public static function setForm()
+    public static function setFormConst() : void
     {
-        if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])
-            && !empty($_POST['name_DB'])&& !empty($_POST['login_DB'])
-        ) {
+        if (isset($_POST['submit']) && !empty($_POST['name_DB'])&& !empty($_POST['login_DB'])) {
             Maker::runCreateConfig($_POST['name_DB'], $_POST['login_DB'], $_POST['password_DB']);
-
-
         }
     }
 
-    public function authorizationForm()
+    public static function setForm () : bool
     {
-        return $this->authorization->getAll('SELECT `email`, `password` FROM `login` WHERE `email` = :email AND `password` = :password', [
-            ':email' => $_POST['email'],
-            ':password' => $_POST['password']
-        ]);
+        if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
+           return true;
+        }
     }
 }

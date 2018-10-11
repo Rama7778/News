@@ -1,21 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: User
- * Date: 11.10.2018
- * Time: 11:40
+ *  @author   Rauvtovich Yauhen
+ *  @copyright 2018
+ *  @license   GPL-2.0+
  */
 
 namespace Yaurau\Models;
 
 require_once __DIR__ . '/../autoload.php';
 
-use Yaurau\Controllers\{SiteController, AdminController, CreateController};
+use Yaurau\Controllers\{
+    CreateControllerLogin, SiteController, AdminController, CreateController
+};
 use Yaurau\Models\Check;
 
 class ChoiceController
 {
-    static $controller = 'Site';
+    static $controller = 'Create';
 
     public static function runChoice()
     {
@@ -24,28 +25,30 @@ class ChoiceController
         } elseif (Check::checkCreateConst() == true && Check::checkCreateTables() == true) {
             return self::$controller = 'Site';
         } elseif (Check::checkCreateConst() == true) {
-            return self::$controller = 'Create'; //Если есть config
-        }                                           //Если есть таблица login
-    }                                             //Если есть и конфиг и login
+            return self::$controller = 'CreateLogin';
+        }
+    }
 
     public static function runController()
     {
-        $cont = self::getController(self::runChoice());
-        $cont->getView;
+        self::runChoice();
+        $cont = self::getController(self::$controller);
+        $cont->getView();
     }
 
     public static function getController($value)
     {
         if ($value == 'Admin') {
-            return new AdminController();
-        }
-        if ($value == 'Site') {
-            return new SiteController();
-        }
-        if ($value == 'Create') {
-            return new CreateController();
+            return new AdminController;
+        } elseif ($value == 'Site') {
+            return new SiteController;
+        } elseif ($value == 'Create') {
+            return new CreateController;
+        } elseif ($value == 'CreateLogin') {
+            return new CreateControllerLogin;
         }
     }
+
 }
 //                }self::$controller = 'Site';
 //        p

@@ -1,10 +1,16 @@
 <?php
+/**
+ *  @author   Rauvtovich Yauhen
+ *  @copyright 2018
+ *  @license   GPL-2.0+
+ */
+
 namespace Yaurau\Controllers;
 
 use Yaurau\Models\{SiteValues, View};
 
 class SiteController {
-    public static function getView()
+    public function getView()
     {
             $arrayName = [];
             $arrayValue = [];

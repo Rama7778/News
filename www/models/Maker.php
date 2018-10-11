@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: User
- * Date: 11.10.2018
- * Time: 14:47
+ *  @author   Rauvtovich Yauhen
+ *  @copyright 2018
+ *  @license   GPL-2.0+
  */
 
 namespace Yaurau\Models;

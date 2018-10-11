@@ -13,7 +13,7 @@ use Yaurau\Models\{
 
 class AdminController
 {
-    public static function getView()
+    public function getView()
     {
         $check = new Check();
         if ($check->authorizationForm()) {
