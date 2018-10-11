@@ -7,6 +7,8 @@
 
 namespace Yaurau\Models;
 
+use Yaurau\Controllers\AdminController;
+
 class Check extends Database
 {
     /**
@@ -23,25 +25,39 @@ class Check extends Database
         $this->authorization = new Database();
     }
 
-    public static function checkCreateDB() : bool
+    public function checkCreateTablesPublic() : array
+    {
+        return $this->getValues('SHOW TABLES');
+    }
+    /**
+     * @return bool
+     */
+    public static function checkCreateConst() : bool
     {
         $filename = __DIR__ . '/../config.php';
-        if (file_exists($filename)) {
+        $content = file_get_contents($filename);
+        if (strpos ($content, 'define')!= NULL) {
             return true;
         } else {
             return false;
         }
 
     }
+
+    public static function checkCreateTables()
+    {
+        $obj = new self();
+        $obj->checkCreateTablesPublic();
+    }
+
     public static function setForm()
     {
-        if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
-            $tables= new Tables;
-            $tables->create();
-            $values = new Values();
-            $values->insert();
-            SiteValues::setBaseValues();
-            return 'true';
+        if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])
+            && !empty($_POST['name_DB'])&& !empty($_POST['login_DB'])
+        ) {
+            Maker::runCreateConfig($_POST['name_DB'], $_POST['login_DB'], $_POST['password_DB']);
+
+
         }
     }
 

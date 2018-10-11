@@ -4,7 +4,7 @@ namespace Yaurau\Controllers;
 use Yaurau\Models\{SiteValues, View};
 
 class SiteController {
-    public static function viewSite()
+    public static function getView()
     {
             $arrayName = [];
             $arrayValue = [];

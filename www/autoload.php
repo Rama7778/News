@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/configTest.php';
+require __DIR__ . '/config.php';
 
 spl_autoload_register(function ($class) {
     if (file_exists( __DIR__ . '/controllers/' . $class . '.php')) {

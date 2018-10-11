@@ -6,8 +6,8 @@
  * Time: 11:40
  */
 
-
 namespace Yaurau\Models;
+
 require_once __DIR__ . '/../autoload.php';
 
 use Yaurau\Controllers\{SiteController, AdminController, CreateController};
@@ -15,19 +15,49 @@ use Yaurau\Models\Check;
 
 class ChoiceController
 {
-    public static function runChoice(){
-        if($_GET['id'] == 'login') {
-            AdminController::viewAdminPanel();
+    static $controller = 'Site';
+
+    public static function runChoice()
+    {
+        if ($_GET['id'] == 'login') {
+            return self::$controller = 'Admin';
+        } elseif (Check::checkCreateConst() == true && Check::checkCreateTables() == true) {
+            return self::$controller = 'Site';
+        } elseif (Check::checkCreateConst() == true) {
+            return self::$controller = 'Create'; //Если есть config
+        }                                           //Если есть таблица login
+    }                                             //Если есть и конфиг и login
+
+    public static function runController()
+    {
+        $cont = self::getController(self::runChoice());
+        $cont->getView;
+    }
+
+    public static function getController($value)
+    {
+        if ($value == 'Admin') {
+            return new AdminController();
         }
-        elseif(Check::checkCreateDB() == true){
-            SiteController::viewSite();
+        if ($value == 'Site') {
+            return new SiteController();
         }
-        elseif (Check::setForm() == true) {
-            AdminController::getAdminPanel();
-        }
-        else {
-            CreateController::viewCreatePanel();
-            Check::setForm();
+        if ($value == 'Create') {
+            return new CreateController();
         }
     }
 }
+//                }self::$controller = 'Site';
+//        p
+//            AdminController::viewAdminPanel();
+//        }
+//        elseif(Check::checkCreateDB() == true){ //Проверка наличия БД сайта
+//            SiteController::viewSite();
+//        }
+//        else {
+//            CreateController::viewCreatePanel();  //Create DB
+//
+
+//        }
+//    }
+//}
