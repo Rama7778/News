@@ -23,11 +23,16 @@ class Check extends Database
         $this->authorization = new Database();
     }
 
-    public function createSite()
+    public static function checkCreateDB() : bool
     {
-        return $this->getValues('SHOW TABLES');
-    }
+        $filename = __DIR__ . '/../config.php';
+        if (file_exists($filename)) {
+            return true;
+        } else {
+            return false;
+        }
 
+    }
     public static function setForm()
     {
         if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
@@ -47,16 +52,4 @@ class Check extends Database
             ':password' => $_POST['password']
         ]);
     }
-
-    static public function checkLogin()
-    {
-        $check = new Check();
-        if($check->createSite() != null){
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
 }

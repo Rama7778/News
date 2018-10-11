@@ -10,16 +10,7 @@ class CreateController
     public static function viewCreatePanel()
     {
         $path = 'create.html.twig';
-        $array = [
-            'name' => 'Yaurau Framework',
-            'creater' => 'Yaurau Framework',
-            'title' => 'Yaurau Framework',
-            'what_we' => 'what we',
-            'we_offer_our_customers' => 'we offer our customers',
-            'Our' => 'Our',
-            'service' => 'service',
-            'Projects' => 'Projects'
-        ];
+        $array = ['title' => 'Yaurau Framework'];
         View::getView($path, $array);
 
     }
