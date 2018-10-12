@@ -24,16 +24,18 @@ class ChoiceController
             return self::$controller = 'Admin';
         } elseif (Check::checkCreateConst() == true && Check::checkCreateTables() == true) {
             return self::$controller = 'Site';
-        } elseif (Check::checkCreateConst() == true) {
-            return self::$controller = 'CreateLogin';
         }
     }
 
-    public static function runController()
+    public static function runController($controller = 0)
     {
+        if($controller !== 0){
+            self::$controller = $controller;
+        }
         self::runChoice();
         $cont = self::getController(self::$controller);
         $cont->getView();
+        return self::$controller;
     }
 
     public static function getController($value)

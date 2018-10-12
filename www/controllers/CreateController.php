@@ -16,6 +16,5 @@ class CreateController
         $path = 'create.html.twig';
         $array = ['title' => 'Yaurau Framework'];
         View::getView($path, $array);
-        Check::setFormConst();
     }
 }

@@ -55,16 +55,19 @@ class Check extends Database
         }
     }
 
-    public static function checkCreateTables()
+    public static function checkCreateTables() : bool
     {
         $obj = new self();
-        $obj->checkCreateTablesPublic();
+        if($obj->checkCreateTablesPublic()){
+            return true;
+        };
     }
 
     public static function setFormConst() : void
     {
         if (isset($_POST['submit']) && !empty($_POST['name_DB'])&& !empty($_POST['login_DB'])) {
             Maker::runCreateConfig($_POST['name_DB'], $_POST['login_DB'], $_POST['password_DB']);
+
         }
     }
 
