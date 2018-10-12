@@ -12,7 +12,6 @@ use Yaurau\Models\ChoiceController;
 ChoiceController::runController();
 
 
-//require_once __DIR__.'/view/login.php';
 
 
 
