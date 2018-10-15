@@ -16,6 +16,9 @@ use Yaurau\Models\Check;
 
 class ChoiceController
 {
+    /**
+     * @var string
+     */
     static $controller = 'Create';
 
     public static function runChoice()
@@ -29,13 +32,12 @@ class ChoiceController
 
     public static function runController($controller = 0)
     {
+        self::runChoice();
         if($controller !== 0){
             self::$controller = $controller;
         }
-        self::runChoice();
         $cont = self::getController(self::$controller);
         $cont->getView();
-        return self::$controller;
     }
 
     public static function getController($value)
