@@ -71,7 +71,7 @@ class Check extends Database
         }
     }
 
-    public static function setForm () : bool
+    public static function setForm ()
     {
         if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
            return true;

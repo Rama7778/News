@@ -7,9 +7,14 @@
     */
 
                 
-                  
-                 
-                   
+    define('DB_NAME', 'yaurau'); 
+    define('DB_USER', 'root'); 
+    define('DB_HOST', 'localhost');
+    define('DB_PASSWORD', '');                
+    define('DB_NAME', 'yaurau'); 
+    define('DB_USER', 'root'); 
+    define('DB_HOST', 'localhost');
+    define('DB_PASSWORD', '');                
     define('DB_NAME', 'yaurau'); 
     define('DB_USER', 'root'); 
     define('DB_HOST', 'localhost');
