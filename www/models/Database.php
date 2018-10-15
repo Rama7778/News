@@ -57,4 +57,10 @@ class Database
         $sth = $this->dbn->prepare($sql);
         $sth->execute($parameter);
     }
+    public function setTransaction($sql) : void
+    {
+        $this->dbn->beginTransaction();
+        $this->dbn->query($sql);
+        $this->dbn->commit();
+    }
 }

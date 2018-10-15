@@ -10,6 +10,14 @@ namespace Yaurau\Models;
 class Tables extends Database
 {
     private $create;
+    static  private $createTableLogin = 'CREATE TABLE `login` (
+            id INT(11) NOT NULL AUTO_INCREMENT,
+            email text(50), password text(50),			
+            PRIMARY KEY(`id`));';
+    static  private $createTableValue = 'CREATE TABLE `value` (
+            id INT(11) NOT NULL AUTO_INCREMENT,
+            email text(50), password text(50),			
+            PRIMARY KEY(`id`));';
 
     public function __construct()
     {
@@ -19,15 +27,8 @@ class Tables extends Database
 
     public function create()
     {
-        $this->create->setQuery('CREATE TABLE `login` (
-            id INT(11) NOT NULL AUTO_INCREMENT,
-            email text(50), password text(50),			
-            PRIMARY KEY(`id`))'
-        );
-        $this->create->setQuery('CREATE TABLE `value` (
-            id INT(11) NOT NULL AUTO_INCREMENT,
-            name text(50), value text,			
-            PRIMARY KEY(`id`))'
+        $this->create->setTransaction(
+            self::$createTableLogin . self::$createTableValue
         );
         return true;
     }
