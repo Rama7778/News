@@ -25,6 +25,8 @@ class Maker
     define('DB_PASSWORD', '$password_DB');"
         ;
         file_put_contents(self::FILE, $data, FILE_APPEND );
+    }
+    public static function runCreateTables(){
         $tables= new Tables;
         $tables->create();
         $values = new Values();

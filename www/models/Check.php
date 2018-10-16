@@ -58,9 +58,11 @@ class Check extends Database
     public static function checkCreateTables() : bool
     {
         $obj = new self();
-        if($obj->checkCreateTablesPublic()){
+        if($obj->checkCreateTablesPublic() != NULL ){
             return true;
-        };
+        } else {
+            return false;
+        }
     }
 
     public static function setFormConst() : void
@@ -71,10 +73,12 @@ class Check extends Database
         }
     }
 
-    public static function setForm ()
+    public static function setForm () : bool
     {
         if (isset($_POST['submit']) && !empty($_POST['new_email']) && !empty($_POST['new_password'])) {
            return true;
+        } else {
+            return false;
         }
     }
 }

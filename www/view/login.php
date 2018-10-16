@@ -1,16 +1,15 @@
 <?php
 require_once __DIR__ . '/../autoload.php';
 
-use Yaurau\Models\{ChoiceController, Check, Values};
+use Yaurau\Models\{ChoiceController, Check, Maker};
 
-if(Check::checkCreateTables() == false){
+if(Check::checkCreateConst() == false){
     Check::setFormConst();
 }
-Check::setFormConst();
 ChoiceController::runController('CreateLogin');
 if(Check::setForm() == true){
-    $form = new Values();
-    $form->insert();
+    Maker::runCreateTables();
 } else {
     ChoiceController::runController('CreateLogin');
 }
+
