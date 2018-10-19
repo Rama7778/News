@@ -7,9 +7,7 @@ if(Check::checkCreateConst() == false){
     Check::setFormConst();
 }
 ChoiceController::runController('CreateLogin');
-if(Check::setForm() == true){
-    Maker::runCreateTables();
-} else {
-    ChoiceController::runController('CreateLogin');
-}
+Maker::runCreateTables();
+
+
 

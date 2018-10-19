@@ -16,7 +16,7 @@ class Tables extends Database
             PRIMARY KEY(`id`));';
     static  private $createTableValue = 'CREATE TABLE `value` (
             id INT(11) NOT NULL AUTO_INCREMENT,
-            email text(50), password text(50),			
+            name text(50), value text(50),			
             PRIMARY KEY(`id`));';
 
     public function __construct()

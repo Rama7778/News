@@ -7,7 +7,7 @@
 
 namespace Yaurau\Controllers;
 
-use Yaurau\Models\{View, Check};
+use Yaurau\Models\{View, Maker};
 
 class CreateControllerLogin
 {

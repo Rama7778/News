@@ -27,6 +27,8 @@ class ChoiceController
             return self::$controller = 'Admin';
         } elseif (Check::checkCreateConst() == true && Check::checkCreateTables() == true) {
             return self::$controller = 'Site';
+        } else {
+            return self::$controller = 'Create';
         }
     }
 
@@ -38,6 +40,7 @@ class ChoiceController
         }
         $cont = self::getController(self::$controller);
         $cont->getView();
+        return self::$controller = $controller;
     }
 
     public static function getController($value)
